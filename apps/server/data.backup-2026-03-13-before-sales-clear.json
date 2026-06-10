@@ -2,19 +2,7 @@
   "settings": {
     "businessName": "Pepsi Distributor POS",
     "currency": "LKR",
-    "taxRate": 0.08,
-    "lorryCountResetAt": {
-      "Lorry A": "2026-03-20T11:53:05.776Z",
-      "Lorry B": "2026-03-20T11:53:05.776Z"
-    },
-    "loadingRowMarks": {
-      "Lorry A|p-3ItbO8l1||||": {
-        "loaded": true,
-        "updatedAt": "2026-03-20T11:52:18.783Z",
-        "updatedBy": "admin"
-      }
-    },
-    "managerFullAccess": false
+    "taxRate": 0.08
   },
   "products": [
     {
@@ -26,7 +14,7 @@
       "price": 100,
       "billingPrice": 92,
       "mrp": 100,
-      "stock": 0
+      "stock": 98
     },
     {
       "id": "p-Z5VSCHCv",
@@ -37,7 +25,7 @@
       "price": 100,
       "billingPrice": 92,
       "mrp": 100,
-      "stock": 0,
+      "stock": 147,
       "invoicePrice": 85
     },
     {
@@ -49,7 +37,7 @@
       "price": 100,
       "billingPrice": 92,
       "mrp": 100,
-      "stock": 0
+      "stock": 102
     },
     {
       "id": "p-jXDUZOii",
@@ -60,7 +48,7 @@
       "price": 100,
       "billingPrice": 92,
       "mrp": 100,
-      "stock": 0
+      "stock": 100
     },
     {
       "id": "p-FSol18n8",
@@ -71,7 +59,7 @@
       "price": 100,
       "billingPrice": 92,
       "mrp": 100,
-      "stock": 25
+      "stock": 100
     },
     {
       "id": "p-GsVWX6ce",
@@ -82,7 +70,7 @@
       "price": 130,
       "billingPrice": 113.33,
       "mrp": 130,
-      "stock": 0
+      "stock": 100
     },
     {
       "id": "p-Skot-PY9",
@@ -93,7 +81,7 @@
       "price": 70,
       "billingPrice": 60.42,
       "mrp": 70,
-      "stock": 0
+      "stock": 100
     },
     {
       "id": "p-0-w_8qaB",
@@ -104,7 +92,7 @@
       "price": 500,
       "billingPrice": 468.55,
       "mrp": 500,
-      "stock": 61,
+      "stock": 103,
       "invoicePrice": 10
     },
     {
@@ -116,7 +104,7 @@
       "price": 500,
       "billingPrice": 468.55,
       "mrp": 500,
-      "stock": 0
+      "stock": 101
     },
     {
       "id": "p-GsgOhytX",
@@ -127,8 +115,7 @@
       "price": 100,
       "billingPrice": 92,
       "mrp": 100,
-      "stock": 18,
-      "invoicePrice": 0
+      "stock": 100
     },
     {
       "id": "p-UA_fJK6k",
@@ -139,7 +126,7 @@
       "price": 500,
       "billingPrice": 468.55,
       "mrp": 500,
-      "stock": 0
+      "stock": 101
     },
     {
       "id": "p-vDX-heC_",
@@ -150,7 +137,7 @@
       "price": 400,
       "billingPrice": 372,
       "mrp": 400,
-      "stock": 0
+      "stock": 100
     },
     {
       "id": "p-tqa-dHWt",
@@ -161,7 +148,18 @@
       "price": 380,
       "billingPrice": 361,
       "mrp": 380,
-      "stock": 0
+      "stock": 100
+    },
+    {
+      "id": "p-62sbxNDr",
+      "name": "7UP",
+      "size": "1500 ml",
+      "sku": "7UP1500",
+      "category": "Plastic",
+      "price": 420,
+      "billingPrice": 392,
+      "mrp": 420,
+      "stock": 100
     },
     {
       "id": "p-CsI-sYaG",
@@ -172,7 +170,7 @@
       "price": 400,
       "billingPrice": 372,
       "mrp": 400,
-      "stock": 0
+      "stock": 100
     },
     {
       "id": "p-8TwNDGko",
@@ -183,7 +181,7 @@
       "price": 170,
       "billingPrice": 157.25,
       "mrp": 170,
-      "stock": 0
+      "stock": 100
     },
     {
       "id": "p-Efr74PI4",
@@ -194,7 +192,7 @@
       "price": 300,
       "billingPrice": 282,
       "mrp": 300,
-      "stock": 0
+      "stock": 100
     },
     {
       "id": "p-xPFQxrfw",
@@ -205,7 +203,7 @@
       "price": 250,
       "billingPrice": 237,
       "mrp": 250,
-      "stock": 0
+      "stock": 100
     },
     {
       "id": "p-hZ0IXqFC",
@@ -216,7 +214,7 @@
       "price": 250,
       "billingPrice": 237,
       "mrp": 250,
-      "stock": 0
+      "stock": 100
     },
     {
       "id": "p-YPxqwX4E",
@@ -227,7 +225,7 @@
       "price": 250,
       "billingPrice": 237,
       "mrp": 250,
-      "stock": 0
+      "stock": 100
     },
     {
       "id": "p-3ItbO8l1",
@@ -235,11 +233,10 @@
       "size": "1000 ml",
       "sku": "7UP1000",
       "category": "Plastic",
-      "price": 310,
+      "price": 300,
       "billingPrice": 282,
-      "mrp": 310,
-      "stock": 100,
-      "invoicePrice": 100
+      "mrp": 300,
+      "stock": 100
     },
     {
       "id": "p-jqhbzB8v",
@@ -250,7 +247,7 @@
       "price": 300,
       "billingPrice": 282,
       "mrp": 300,
-      "stock": 0
+      "stock": 100
     },
     {
       "id": "p-5aJ7aclV",
@@ -261,7 +258,7 @@
       "price": 300,
       "billingPrice": 282,
       "mrp": 300,
-      "stock": 0
+      "stock": 100
     },
     {
       "id": "p-gzuqTb2D",
@@ -272,7 +269,7 @@
       "price": 100,
       "billingPrice": 92,
       "mrp": 100,
-      "stock": 0
+      "stock": 100
     },
     {
       "id": "p-qMd_WzrS",
@@ -283,7 +280,7 @@
       "price": 100,
       "billingPrice": 92.41,
       "mrp": 100,
-      "stock": 0
+      "stock": 100
     },
     {
       "id": "p-tpRmebcz",
@@ -294,7 +291,7 @@
       "price": 150,
       "billingPrice": 138,
       "mrp": 150,
-      "stock": 0
+      "stock": 100
     },
     {
       "id": "p-PIoZhwxd",
@@ -305,7 +302,7 @@
       "price": 150,
       "billingPrice": 138,
       "mrp": 150,
-      "stock": 0
+      "stock": 100
     },
     {
       "id": "p-WiwbgxT3",
@@ -316,7 +313,7 @@
       "price": 150,
       "billingPrice": 138,
       "mrp": 150,
-      "stock": 0
+      "stock": 100
     },
     {
       "id": "p-1akK5rMt",
@@ -327,7 +324,7 @@
       "price": 200,
       "billingPrice": 187.25,
       "mrp": 200,
-      "stock": 2
+      "stock": 100
     },
     {
       "id": "p-ITcFfTUQ",
@@ -338,8 +335,7 @@
       "price": 200,
       "billingPrice": 187.25,
       "mrp": 200,
-      "stock": 2976,
-      "invoicePrice": 0
+      "stock": 100
     },
     {
       "id": "p-DBkUsCpG",
@@ -350,7 +346,7 @@
       "price": 200,
       "billingPrice": 187.25,
       "mrp": 200,
-      "stock": 2
+      "stock": 100
     },
     {
       "id": "p-cvL1WNB0",
@@ -361,7 +357,7 @@
       "price": 200,
       "billingPrice": 187.25,
       "mrp": 200,
-      "stock": 0
+      "stock": 100
     },
     {
       "id": "p-i1J9n8oF",
@@ -372,7 +368,7 @@
       "price": 80,
       "billingPrice": 73.75,
       "mrp": 80,
-      "stock": 0
+      "stock": 100
     },
     {
       "id": "p-1hczJblI",
@@ -383,8 +379,7 @@
       "price": 150,
       "billingPrice": 136.25,
       "mrp": 150,
-      "stock": 10,
-      "invoicePrice": 0
+      "stock": 100
     },
     {
       "id": "p-e3XO7h-u",
@@ -395,7 +390,7 @@
       "price": 150,
       "billingPrice": 136.25,
       "mrp": 150,
-      "stock": 51
+      "stock": 100
     },
     {
       "id": "p-UAhn9hHy",
@@ -406,7 +401,7 @@
       "price": 120,
       "billingPrice": 111.47,
       "mrp": 120,
-      "stock": 99
+      "stock": 100
     },
     {
       "id": "p-YX4Z-u5i",
@@ -417,7 +412,7 @@
       "price": 120,
       "billingPrice": 111.47,
       "mrp": 120,
-      "stock": 40
+      "stock": 100
     },
     {
       "id": "p-h7ccvB8z",
@@ -428,7 +423,7 @@
       "price": 100,
       "billingPrice": 92.87,
       "mrp": 100,
-      "stock": 97
+      "stock": 100
     },
     {
       "id": "p-w7W26Ye8",
@@ -439,7 +434,7 @@
       "price": 100,
       "billingPrice": 92.87,
       "mrp": 100,
-      "stock": 99
+      "stock": 100
     },
     {
       "id": "p-GXt3mivc",
@@ -450,7 +445,7 @@
       "price": 100,
       "billingPrice": 92.87,
       "mrp": 100,
-      "stock": 69
+      "stock": 100
     },
     {
       "id": "p-VuVCsF9q",
@@ -461,7 +456,7 @@
       "price": 120,
       "billingPrice": 111.47,
       "mrp": 120,
-      "stock": 99
+      "stock": 100
     },
     {
       "id": "p-XP0Wc1Qf",
@@ -472,7 +467,7 @@
       "price": 120,
       "billingPrice": 111.47,
       "mrp": 120,
-      "stock": 99
+      "stock": 100
     },
     {
       "id": "p-iKR-1dhL",
@@ -483,7 +478,7 @@
       "price": 120,
       "billingPrice": 111.47,
       "mrp": 120,
-      "stock": 99
+      "stock": 100
     },
     {
       "id": "p-8MNVkx4q",
@@ -494,7 +489,7 @@
       "price": 100,
       "billingPrice": 92,
       "mrp": 100,
-      "stock": 90
+      "stock": 100
     },
     {
       "id": "p-002",
@@ -502,7 +497,7 @@
       "sku": "PEP1500",
       "category": "Soft Drinks",
       "price": 420,
-      "stock": 99,
+      "stock": 100,
       "billingPrice": 392,
       "mrp": 420,
       "size": "1500 ml"
@@ -521,605 +516,9 @@
   ],
   "sales": [
     {
-      "id": "00017",
-      "requestId": "sale-1779128564498-fm9rxnys",
-      "createdAt": "2026-05-18T18:22:45.669Z",
-      "cashier": "rep1",
-      "customerName": "A.G.A Stores",
-      "customerPhone": "",
-      "lorry": "Lorry B",
-      "paymentType": "cash",
-      "notes": "",
-      "discount": 0,
-      "taxRate": 0,
-      "payments": [],
-      "lines": [
-        {
-          "productId": "p-0-w_8qaB",
-          "name": "7UP 2000 ml",
-          "size": "2000 ml",
-          "category": "Plastic",
-          "quantity": 18,
-          "basePrice": 468.55,
-          "itemDiscount": 0,
-          "itemDiscountMode": "amount",
-          "price": 468.55
-        }
-      ],
-      "subTotal": 8433.9,
-      "discountAmount": 0,
-      "taxable": 8433.9,
-      "tax": 0,
-      "total": 8433.9,
-      "paidAmount": 0,
-      "dueAmount": 8433.9,
-      "cashReceived": null,
-      "creditDueDate": "",
-      "chequeAmount": null,
-      "chequeNo": "",
-      "chequeDate": "",
-      "chequeBank": "",
-      "returnedAmount": 0,
-      "refundDueAmount": 0,
-      "undeliveredAmount": 0,
-      "netTotalAfterReturns": 8433.9,
-      "outstandingAmount": 8433.9
-    },
-    {
-      "id": "00016",
-      "requestId": "18a0503d-054e-4739-a74b-66237b5c73dc",
-      "createdAt": "2026-05-18T18:04:54.390Z",
-      "cashier": "rep1",
-      "customerName": "4 MAILE STORES",
-      "customerPhone": "",
-      "lorry": "Lorry A",
-      "paymentType": "cash",
-      "notes": "",
-      "discount": 0,
-      "taxRate": 0,
-      "payments": [],
-      "lines": [
-        {
-          "productId": "p-GXt3mivc",
-          "name": "Cream Soda 250 ml",
-          "size": "250 ml",
-          "category": "Plastic",
-          "quantity": 30,
-          "basePrice": 92.87,
-          "itemDiscount": 0,
-          "itemDiscountMode": "amount",
-          "price": 92.87
-        }
-      ],
-      "subTotal": 2786.1,
-      "discountAmount": 0,
-      "taxable": 2786.1,
-      "tax": 0,
-      "total": 2786.1,
-      "paidAmount": 0,
-      "dueAmount": 2786.1,
-      "cashReceived": null,
-      "creditDueDate": "",
-      "chequeAmount": null,
-      "chequeNo": "",
-      "chequeDate": "",
-      "chequeBank": "",
-      "returnedAmount": 0,
-      "refundDueAmount": 0,
-      "undeliveredAmount": 0,
-      "netTotalAfterReturns": 2786.1,
-      "outstandingAmount": 2786.1
-    },
-    {
-      "id": "00015",
-      "requestId": "8e45ee2b-d71d-4754-9af1-1fb6e5cba53a",
-      "createdAt": "2026-05-18T17:59:22.831Z",
-      "cashier": "rep1",
-      "customerName": "221b hotel",
-      "customerPhone": "09884356644",
-      "lorry": "Lorry A",
-      "paymentType": "cash",
-      "notes": "",
-      "discount": 0,
-      "taxRate": 0,
-      "payments": [],
-      "lines": [
-        {
-          "productId": "p-e3XO7h-u",
-          "name": "Pepsi 300 ml",
-          "size": "300 ml",
-          "category": "Glass",
-          "quantity": 48,
-          "basePrice": 136.25,
-          "itemDiscount": 0,
-          "itemDiscountMode": "amount",
-          "price": 136.25
-        }
-      ],
-      "subTotal": 6540,
-      "discountAmount": 0,
-      "taxable": 6540,
-      "tax": 0,
-      "total": 6540,
-      "paidAmount": 0,
-      "dueAmount": 6540,
-      "cashReceived": null,
-      "creditDueDate": "",
-      "chequeAmount": null,
-      "chequeNo": "",
-      "chequeDate": "",
-      "chequeBank": "",
-      "returnedAmount": 0,
-      "refundDueAmount": 0,
-      "undeliveredAmount": 0,
-      "netTotalAfterReturns": 6540,
-      "outstandingAmount": 6540
-    },
-    {
-      "id": "00014",
-      "requestId": "447229fe-a766-46ba-8e05-fba08452eb1b",
-      "createdAt": "2026-05-18T17:56:54.459Z",
-      "cashier": "rep1",
-      "customerName": "221b hotel",
-      "customerPhone": "09884356644",
-      "lorry": "Lorry A",
-      "paymentType": "cash",
-      "notes": "",
-      "discount": 0,
-      "taxRate": 0,
-      "payments": [],
-      "lines": [
-        {
-          "productId": "p-ITcFfTUQ",
-          "name": "7UP 400 ml",
-          "size": "400 ml",
-          "category": "Plastic",
-          "quantity": 24,
-          "basePrice": 187.25,
-          "itemDiscount": 0,
-          "itemDiscountMode": "amount",
-          "price": 187.25
-        }
-      ],
-      "subTotal": 4494,
-      "discountAmount": 0,
-      "taxable": 4494,
-      "tax": 0,
-      "total": 4494,
-      "paidAmount": 0,
-      "dueAmount": 4494,
-      "cashReceived": null,
-      "creditDueDate": "",
-      "chequeAmount": null,
-      "chequeNo": "",
-      "chequeDate": "",
-      "chequeBank": "",
-      "returnedAmount": 0,
-      "refundDueAmount": 0,
-      "undeliveredAmount": 0,
-      "netTotalAfterReturns": 4494,
-      "outstandingAmount": 4494
-    },
-    {
-      "id": "00013",
-      "requestId": "16a5b7a7-48f2-434d-8209-475d1a96c746",
-      "createdAt": "2026-05-18T17:53:04.508Z",
-      "cashier": "rep1",
-      "customerName": "3 Brothers Fast Food",
-      "customerPhone": "",
-      "lorry": "Lorry B",
-      "paymentType": "cash",
-      "notes": "",
-      "discount": 0,
-      "taxRate": 0,
-      "payments": [],
-      "lines": [
-        {
-          "productId": "p-FSol18n8",
-          "name": "Cream Soda 200 ml",
-          "size": "200 ml",
-          "category": "Glass",
-          "quantity": 48,
-          "basePrice": 92,
-          "itemDiscount": 0,
-          "itemDiscountMode": "amount",
-          "price": 92
-        }
-      ],
-      "subTotal": 4416,
-      "discountAmount": 0,
-      "taxable": 4416,
-      "tax": 0,
-      "total": 4416,
-      "paidAmount": 0,
-      "dueAmount": 4416,
-      "cashReceived": null,
-      "creditDueDate": "",
-      "chequeAmount": null,
-      "chequeNo": "",
-      "chequeDate": "",
-      "chequeBank": "",
-      "returnedAmount": 0,
-      "refundDueAmount": 0,
-      "undeliveredAmount": 0,
-      "netTotalAfterReturns": 4416,
-      "outstandingAmount": 4416
-    },
-    {
-      "id": "00012",
-      "requestId": "02b6b5c4-1299-4128-b69f-8210e6a2107e",
-      "createdAt": "2026-05-18T17:42:26.605Z",
-      "cashier": "rep1",
-      "customerName": "3 Brothers Fast Food",
-      "customerPhone": "",
-      "lorry": "Lorry B",
-      "paymentType": "cash",
-      "notes": "",
-      "discount": 0,
-      "taxRate": 0,
-      "payments": [],
-      "lines": [
-        {
-          "productId": "p-YX4Z-u5i",
-          "name": "Mountain Dew 250 ml",
-          "size": "250 ml",
-          "category": "Plastic",
-          "quantity": 60,
-          "basePrice": 111.47,
-          "itemDiscount": 0,
-          "itemDiscountMode": "amount",
-          "price": 111.47
-        }
-      ],
-      "subTotal": 6688.2,
-      "discountAmount": 0,
-      "taxable": 6688.2,
-      "tax": 0,
-      "total": 6688.2,
-      "paidAmount": 0,
-      "dueAmount": 6688.2,
-      "cashReceived": null,
-      "creditDueDate": "",
-      "chequeAmount": null,
-      "chequeNo": "",
-      "chequeDate": "",
-      "chequeBank": "",
-      "returnedAmount": 0,
-      "refundDueAmount": 0,
-      "undeliveredAmount": 0,
-      "netTotalAfterReturns": 6688.2,
-      "outstandingAmount": 6688.2
-    },
-    {
-      "id": "00011",
-      "requestId": "f226f887-030f-4b93-9fca-158016065480",
-      "createdAt": "2026-05-18T17:39:00.871Z",
-      "cashier": "rep1",
-      "customerName": "221b hotel",
-      "customerPhone": "09884356644",
-      "lorry": "Lorry B",
-      "paymentType": "cash",
-      "notes": "",
-      "discount": 0,
-      "taxRate": 0,
-      "payments": [],
-      "lines": [
-        {
-          "productId": "p-GsgOhytX",
-          "name": "7UP 200 ml",
-          "size": "200 ml",
-          "category": "Glass",
-          "quantity": 2,
-          "basePrice": 92,
-          "itemDiscount": 0,
-          "itemDiscountMode": "amount",
-          "price": 92
-        }
-      ],
-      "subTotal": 184,
-      "discountAmount": 0,
-      "taxable": 184,
-      "tax": 0,
-      "total": 184,
-      "paidAmount": 0,
-      "dueAmount": 184,
-      "cashReceived": null,
-      "creditDueDate": "",
-      "chequeAmount": null,
-      "chequeNo": "",
-      "chequeDate": "",
-      "chequeBank": "",
-      "returnedAmount": 0,
-      "refundDueAmount": 0,
-      "undeliveredAmount": 0,
-      "netTotalAfterReturns": 184,
-      "outstandingAmount": 184
-    },
-    {
-      "id": "00010",
-      "requestId": "sale-1779118505486-6fhi9zmd",
-      "createdAt": "2026-05-18T15:35:07.356Z",
-      "cashier": "rep1",
-      "customerName": "221b hotel",
-      "customerPhone": "09884356644",
-      "lorry": "Lorry A",
-      "paymentType": "cheque",
-      "notes": "",
-      "discount": 20,
-      "taxRate": 0,
-      "payments": [],
-      "lines": [
-        {
-          "productId": "p-8MNVkx4q",
-          "name": "Pepsi 200 ml",
-          "size": "200 ml",
-          "category": "Glass",
-          "quantity": 9,
-          "basePrice": 92,
-          "itemDiscount": 28,
-          "itemDiscountMode": "amount",
-          "price": 64
-        }
-      ],
-      "subTotal": 576,
-      "discountAmount": 20,
-      "taxable": 556,
-      "tax": 0,
-      "total": 556,
-      "paidAmount": 0,
-      "dueAmount": 556,
-      "cashReceived": null,
-      "creditDueDate": "",
-      "chequeAmount": null,
-      "chequeNo": "",
-      "chequeDate": "",
-      "chequeBank": "",
-      "returnedAmount": 0,
-      "refundDueAmount": 0,
-      "undeliveredAmount": 0,
-      "netTotalAfterReturns": 556,
-      "outstandingAmount": 556
-    },
-    {
-      "id": "00009",
-      "requestId": "sale-1775635307663-b2xxduxj",
-      "createdAt": "2026-04-08T08:01:48.522Z",
-      "cashier": "rep1",
-      "customerName": "221b hotel",
-      "customerPhone": "09884356644",
-      "lorry": "Lorry A",
-      "paymentType": "cash",
-      "notes": "",
-      "discount": 0,
-      "taxRate": 0,
-      "payments": [],
-      "lines": [
-        {
-          "productId": "p-GsgOhytX",
-          "name": "7UP 200 ml",
-          "size": "200 ml",
-          "category": "Glass",
-          "quantity": 2,
-          "basePrice": 92,
-          "itemDiscount": 0,
-          "itemDiscountMode": "amount",
-          "price": 92
-        }
-      ],
-      "subTotal": 184,
-      "discountAmount": 0,
-      "taxable": 184,
-      "tax": 0,
-      "total": 184,
-      "paidAmount": 0,
-      "dueAmount": 184,
-      "cashReceived": null,
-      "creditDueDate": "",
-      "chequeAmount": null,
-      "chequeNo": "",
-      "chequeDate": "",
-      "chequeBank": "",
-      "returnedAmount": 0,
-      "refundDueAmount": 0,
-      "undeliveredAmount": 0,
-      "netTotalAfterReturns": 184,
-      "outstandingAmount": 184
-    },
-    {
-      "id": "00008",
-      "requestId": "sale-1774976403334-l0m2sqm9",
-      "createdAt": "2026-03-31T17:00:04.346Z",
-      "cashier": "rep1",
-      "customerName": "3 Brothers Fast Food",
-      "customerPhone": "",
-      "lorry": "Lorry A Overflow",
-      "paymentType": "cheque",
-      "notes": "",
-      "discount": 0,
-      "taxRate": 0,
-      "payments": [],
-      "lines": [
-        {
-          "productId": "p-GsgOhytX",
-          "name": "7UP 200 ml",
-          "size": "200 ml",
-          "category": "Glass",
-          "quantity": 3,
-          "basePrice": 92,
-          "itemDiscount": 0,
-          "itemDiscountMode": "amount",
-          "price": 92
-        }
-      ],
-      "subTotal": 276,
-      "discountAmount": 0,
-      "taxable": 276,
-      "tax": 0,
-      "total": 276,
-      "paidAmount": 0,
-      "dueAmount": 276,
-      "cashReceived": null,
-      "creditDueDate": "",
-      "chequeAmount": null,
-      "chequeNo": "",
-      "chequeDate": "",
-      "chequeBank": "",
-      "returnedAmount": 0,
-      "refundDueAmount": 0,
-      "undeliveredAmount": 0,
-      "netTotalAfterReturns": 276,
-      "outstandingAmount": 276
-    },
-    {
-      "id": "00007",
-      "requestId": "sale-1774976359287-krlbxjgb",
-      "createdAt": "2026-03-31T16:59:20.298Z",
-      "cashier": "rep1",
-      "customerName": "3 Brothers Fast Food",
-      "customerPhone": "",
-      "lorry": "Lorry A Overflow",
-      "paymentType": "cheque",
-      "notes": "",
-      "discount": 0,
-      "taxRate": 0,
-      "payments": [],
-      "lines": [
-        {
-          "productId": "p-GsgOhytX",
-          "name": "7UP 200 ml",
-          "size": "200 ml",
-          "category": "Glass",
-          "quantity": 6,
-          "basePrice": 92,
-          "itemDiscount": 0,
-          "itemDiscountMode": "amount",
-          "price": 92
-        },
-        {
-          "productId": "p-gzuqTb2D",
-          "name": "Mirinda 200 ml",
-          "size": "200 ml",
-          "category": "Glass",
-          "quantity": 1,
-          "basePrice": 92,
-          "itemDiscount": 0,
-          "itemDiscountMode": "amount",
-          "price": 92
-        }
-      ],
-      "subTotal": 644,
-      "discountAmount": 0,
-      "taxable": 644,
-      "tax": 0,
-      "total": 644,
-      "paidAmount": 0,
-      "dueAmount": 644,
-      "cashReceived": null,
-      "creditDueDate": "",
-      "chequeAmount": null,
-      "chequeNo": "",
-      "chequeDate": "",
-      "chequeBank": "",
-      "returnedAmount": 0,
-      "refundDueAmount": 0,
-      "undeliveredAmount": 0,
-      "netTotalAfterReturns": 644,
-      "outstandingAmount": 644
-    },
-    {
-      "id": "00006",
-      "requestId": "sale-1774975718534-b2rfcc3p",
-      "createdAt": "2026-03-31T16:48:39.564Z",
-      "cashier": "rep1",
-      "customerName": "3 Brothers Fast Food",
-      "customerPhone": "",
-      "lorry": "Lorry A Overflow",
-      "paymentType": "cheque",
-      "notes": "",
-      "discount": 2.41,
-      "taxRate": 0,
-      "payments": [],
-      "lines": [
-        {
-          "productId": "p-qMd_WzrS",
-          "name": "Soda 400 ml",
-          "size": "400 ml",
-          "category": "Plastic",
-          "quantity": 1,
-          "basePrice": 92.41,
-          "itemDiscount": 0,
-          "itemDiscountMode": "amount",
-          "price": 92.41
-        }
-      ],
-      "subTotal": 92.41,
-      "discountAmount": 2.41,
-      "taxable": 90,
-      "tax": 0,
-      "total": 90,
-      "paidAmount": 0,
-      "dueAmount": 90,
-      "cashReceived": null,
-      "creditDueDate": "",
-      "chequeAmount": null,
-      "chequeNo": "",
-      "chequeDate": "",
-      "chequeBank": "",
-      "returnedAmount": 0,
-      "refundDueAmount": 0,
-      "undeliveredAmount": 0,
-      "netTotalAfterReturns": 90,
-      "outstandingAmount": 90
-    },
-    {
-      "id": "00005",
-      "requestId": "sale-1774973691871-w1u0t7i7",
-      "createdAt": "2026-03-31T16:14:53.327Z",
-      "cashier": "rep1",
-      "customerName": "221b hotel",
-      "customerPhone": "09884356644",
-      "lorry": "Lorry A",
-      "paymentType": "cash",
-      "notes": "",
-      "discount": 0,
-      "taxRate": 0,
-      "payments": [],
-      "lines": [
-        {
-          "productId": "p-Skot-PY9",
-          "name": "Aquafina 500 ml",
-          "size": "500 ml",
-          "category": "Plastic",
-          "quantity": 96,
-          "basePrice": 60.42,
-          "itemDiscount": 0,
-          "itemDiscountMode": "amount",
-          "price": 60.42
-        }
-      ],
-      "subTotal": 5800.32,
-      "discountAmount": 0,
-      "taxable": 5800.32,
-      "tax": 0,
-      "total": 5800.32,
-      "paidAmount": 0,
-      "dueAmount": 5800.32,
-      "cashReceived": null,
-      "creditDueDate": "",
-      "chequeAmount": null,
-      "chequeNo": "",
-      "chequeDate": "",
-      "chequeBank": "",
-      "returnedAmount": 0,
-      "refundDueAmount": 0,
-      "undeliveredAmount": 0,
-      "netTotalAfterReturns": 5800.32,
-      "outstandingAmount": 5800.32
-    },
-    {
       "id": "00004",
-      "requestId": "sale-1774972700275-yf61030s",
-      "createdAt": "2026-03-31T15:58:21.400Z",
+      "requestId": "3494c377-b9bd-49a9-a357-7955e9f122c9",
+      "createdAt": "2026-03-12T20:08:29.520Z",
       "cashier": "rep1",
       "customerName": "221b hotel",
       "customerPhone": "09884356644",
@@ -1128,263 +527,376 @@
       "notes": "",
       "discount": 0,
       "taxRate": 0,
-      "payments": [],
-      "lines": [
+      "payments": [
         {
-          "productId": "p-FSol18n8",
-          "name": "Cream Soda 200 ml",
-          "size": "200 ml",
-          "category": "Glass",
-          "quantity": 1,
-          "basePrice": 92,
-          "itemDiscount": 0,
-          "itemDiscountMode": "amount",
-          "price": 92
-        },
-        {
-          "productId": "p-Skot-PY9",
-          "name": "Aquafina 500 ml",
-          "size": "500 ml",
-          "category": "Plastic",
-          "quantity": 3,
-          "basePrice": 60.42,
-          "itemDiscount": 0,
-          "itemDiscountMode": "amount",
-          "price": 60.42
-        },
-        {
-          "productId": "p-5aJ7aclV",
-          "name": "Pepsi 1000 ml",
-          "size": "1000 ml",
-          "category": "Plastic",
-          "quantity": 1,
-          "basePrice": 282,
-          "itemDiscount": 0,
-          "itemDiscountMode": "amount",
-          "price": 282
-        }
-      ],
-      "subTotal": 555.26,
-      "discountAmount": 0,
-      "taxable": 555.26,
-      "tax": 0,
-      "total": 555.26,
-      "paidAmount": 0,
-      "dueAmount": 555.26,
-      "cashReceived": null,
-      "creditDueDate": "",
-      "chequeAmount": null,
-      "chequeNo": "",
-      "chequeDate": "",
-      "chequeBank": "",
-      "returnedAmount": 0,
-      "refundDueAmount": 0,
-      "undeliveredAmount": 0,
-      "netTotalAfterReturns": 555.26,
-      "outstandingAmount": 555.26
-    },
-    {
-      "id": "00003",
-      "requestId": "sale-1774749064861-kf4vq5ik",
-      "createdAt": "2026-03-29T01:51:05.752Z",
-      "cashier": "rep1",
-      "customerName": "Exell srores",
-      "customerPhone": "",
-      "lorry": "Lorry A",
-      "paymentType": "cash",
-      "notes": "",
-      "discount": 600,
-      "taxRate": 0,
-      "payments": [],
-      "lines": [
-        {
-          "productId": "p-0-w_8qaB",
-          "name": "7UP 2000 ml",
-          "size": "2000 ml",
-          "category": "Plastic",
-          "quantity": 9,
-          "basePrice": 468.55,
-          "itemDiscount": 68.55,
-          "itemDiscountMode": "amount",
-          "price": 400
-        }
-      ],
-      "subTotal": 3600,
-      "discountAmount": 600,
-      "taxable": 3000,
-      "tax": 0,
-      "total": 3000,
-      "paidAmount": 0,
-      "dueAmount": 3000,
-      "cashReceived": null,
-      "creditDueDate": "",
-      "chequeAmount": null,
-      "chequeNo": "",
-      "chequeDate": "",
-      "chequeBank": "",
-      "returnedAmount": 0,
-      "refundDueAmount": 0,
-      "undeliveredAmount": 0,
-      "netTotalAfterReturns": 3000,
-      "outstandingAmount": 3000
-    },
-    {
-      "id": "00002",
-      "requestId": "sale-1774739293254-y5s8p8u1",
-      "createdAt": "2026-03-28T23:08:14.162Z",
-      "cashier": "rep1",
-      "customerName": "221b hotel",
-      "customerPhone": "09884356644",
-      "lorry": "Lorry A",
-      "paymentType": "cash",
-      "notes": "",
-      "discount": 0,
-      "taxRate": 0,
-      "payments": [],
-      "lines": [
-        {
-          "productId": "p-0-w_8qaB",
-          "name": "7UP 2000 ml",
-          "size": "2000 ml",
-          "category": "Plastic",
-          "quantity": 3,
-          "basePrice": 468.55,
-          "itemDiscount": 0,
-          "itemDiscountMode": "amount",
-          "price": 468.55
-        },
-        {
-          "productId": "p-h7ccvB8z",
-          "name": "Ginger Beer 250 ml",
-          "size": "250 ml",
-          "category": "Plastic",
-          "quantity": 2,
-          "basePrice": 92.87,
-          "itemDiscount": 0,
-          "itemDiscountMode": "amount",
-          "price": 92.87
-        }
-      ],
-      "subTotal": 1591.39,
-      "discountAmount": 0,
-      "taxable": 1591.39,
-      "tax": 0,
-      "total": 1591.39,
-      "paidAmount": 0,
-      "dueAmount": 185.74,
-      "cashReceived": null,
-      "creditDueDate": "",
-      "chequeAmount": null,
-      "chequeNo": "",
-      "chequeDate": "",
-      "chequeBank": "",
-      "returnedAmount": 0,
-      "refundDueAmount": 0,
-      "undeliveredAmount": 1405.65,
-      "netTotalAfterReturns": 185.74,
-      "outstandingAmount": 185.74,
-      "deliveryAdjustments": [
-        {
-          "id": "-cCjIDu2F1b1",
-          "createdAt": "2026-03-31T17:23:05.976Z",
-          "by": "admin",
-          "lines": [
+          "id": "p2t0xd88BEO5",
+          "method": "customer_credit",
+          "amount": 368,
+          "createdAt": "2026-03-12T20:08:29.520Z",
+          "receivedBy": "rep1",
+          "usagePlan": [
             {
-              "productId": "p-0-w_8qaB",
-              "name": "7UP 2000 ml",
-              "quantity": 3
+              "creditId": "IDVLq0UXjGtQ",
+              "amount": 192
+            },
+            {
+              "creditId": "a0fW98tmL2S9",
+              "amount": 176
             }
           ]
         }
       ],
-      "deliveryConfirmedAt": "2026-03-31T17:23:05.982Z",
+      "lines": [
+        {
+          "productId": "p-3FWsPhiW",
+          "name": "Sting 200 ml",
+          "quantity": 2,
+          "basePrice": 92,
+          "itemDiscount": 0,
+          "itemDiscountMode": "amount",
+          "price": 92
+        },
+        {
+          "productId": "p-Z5VSCHCv",
+          "name": "Mountain Dew 200 ml",
+          "quantity": 2,
+          "basePrice": 92,
+          "itemDiscount": 0,
+          "itemDiscountMode": "amount",
+          "price": 92
+        }
+      ],
+      "subTotal": 368,
+      "discountAmount": 0,
+      "taxable": 368,
+      "tax": 0,
+      "total": 368,
+      "paidAmount": 276,
+      "dueAmount": 0,
+      "customerCreditApplied": 368,
+      "cashReceived": null,
+      "creditDueDate": "",
+      "chequeAmount": null,
+      "chequeNo": "",
+      "chequeDate": "",
+      "chequeBank": "",
+      "returnedAmount": 0,
+      "refundDueAmount": 92,
+      "undeliveredAmount": 92,
+      "netTotalAfterReturns": 276,
+      "outstandingAmount": 0,
+      "deliveryAdjustments": [
+        {
+          "id": "1jDs_FbFjOMb",
+          "createdAt": "2026-03-12T20:08:58.360Z",
+          "by": "admin",
+          "lines": [
+            {
+              "productId": "p-3FWsPhiW",
+              "name": "Sting 200 ml",
+              "quantity": 1
+            }
+          ]
+        }
+      ],
+      "deliveryConfirmedAt": "2026-03-12T20:08:58.363Z",
+      "deliveryConfirmedBy": "admin"
+    },
+    {
+      "id": "00003",
+      "requestId": "36d514ce-029c-4d22-80d7-350701921907",
+      "createdAt": "2026-03-12T20:03:57.924Z",
+      "cashier": "rep1",
+      "customerName": "221b hotel",
+      "customerPhone": "09884356644",
+      "lorry": "Lorry A",
+      "paymentType": "cash",
+      "notes": "",
+      "discount": 0,
+      "taxRate": 0,
+      "payments": [
+        {
+          "id": "MmdgwTA5W1x1",
+          "method": "customer_credit",
+          "amount": 368,
+          "createdAt": "2026-03-12T20:03:57.925Z",
+          "receivedBy": "rep1",
+          "usagePlan": [
+            {
+              "creditId": "IDVLq0UXjGtQ",
+              "amount": 368
+            }
+          ]
+        }
+      ],
+      "lines": [
+        {
+          "productId": "p-3FWsPhiW",
+          "name": "Sting 200 ml",
+          "quantity": 2,
+          "basePrice": 92,
+          "itemDiscount": 0,
+          "itemDiscountMode": "amount",
+          "price": 92
+        },
+        {
+          "productId": "p-Z5VSCHCv",
+          "name": "Mountain Dew 200 ml",
+          "quantity": 2,
+          "basePrice": 92,
+          "itemDiscount": 0,
+          "itemDiscountMode": "amount",
+          "price": 92
+        }
+      ],
+      "subTotal": 368,
+      "discountAmount": 0,
+      "taxable": 368,
+      "tax": 0,
+      "total": 368,
+      "paidAmount": 184,
+      "dueAmount": 0,
+      "customerCreditApplied": 368,
+      "cashReceived": null,
+      "creditDueDate": "",
+      "chequeAmount": null,
+      "chequeNo": "",
+      "chequeDate": "",
+      "chequeBank": "",
+      "returnedAmount": 92,
+      "refundDueAmount": 184,
+      "undeliveredAmount": 92,
+      "netTotalAfterReturns": 184,
+      "outstandingAmount": 0,
+      "deliveryAdjustments": [
+        {
+          "id": "nTemdPotyIu5",
+          "createdAt": "2026-03-12T20:04:31.737Z",
+          "by": "admin",
+          "lines": [
+            {
+              "productId": "p-Z5VSCHCv",
+              "name": "Mountain Dew 200 ml",
+              "quantity": 1
+            }
+          ]
+        }
+      ],
+      "deliveryConfirmedAt": "2026-03-12T20:04:31.741Z",
+      "deliveryConfirmedBy": "admin"
+    },
+    {
+      "id": "00002",
+      "requestId": "33da4adc-a382-4949-ad97-bda9a717b15c",
+      "createdAt": "2026-03-12T19:54:14.448Z",
+      "cashier": "rep1",
+      "customerName": "221b hotel",
+      "customerPhone": "09884356644",
+      "lorry": "Lorry A",
+      "paymentType": "cash",
+      "notes": "",
+      "discount": 0,
+      "taxRate": 0,
+      "payments": [
+        {
+          "id": "cu-AIcmWDCyQ",
+          "method": "customer_credit",
+          "amount": 184,
+          "createdAt": "2026-03-12T19:54:14.450Z",
+          "receivedBy": "rep1",
+          "usagePlan": [
+            {
+              "creditId": "IDVLq0UXjGtQ",
+              "amount": 184
+            }
+          ]
+        }
+      ],
+      "lines": [
+        {
+          "productId": "p-3FWsPhiW",
+          "name": "Sting 200 ml",
+          "quantity": 1,
+          "basePrice": 92,
+          "itemDiscount": 0,
+          "itemDiscountMode": "amount",
+          "price": 92
+        },
+        {
+          "productId": "p-Z5VSCHCv",
+          "name": "Mountain Dew 200 ml",
+          "quantity": 1,
+          "basePrice": 92,
+          "itemDiscount": 0,
+          "itemDiscountMode": "amount",
+          "price": 92
+        }
+      ],
+      "subTotal": 184,
+      "discountAmount": 0,
+      "taxable": 184,
+      "tax": 0,
+      "total": 184,
+      "paidAmount": 0,
+      "dueAmount": 0,
+      "customerCreditApplied": 184,
+      "cashReceived": null,
+      "creditDueDate": "",
+      "chequeAmount": null,
+      "chequeNo": "",
+      "chequeDate": "",
+      "chequeBank": "",
+      "returnedAmount": 184,
+      "refundDueAmount": 184,
+      "undeliveredAmount": 0,
+      "netTotalAfterReturns": 0,
+      "outstandingAmount": 0,
+      "deliveryAdjustments": [],
+      "deliveryConfirmedAt": "2026-03-12T19:57:14.493Z",
       "deliveryConfirmedBy": "admin"
     },
     {
       "id": "00001",
-      "requestId": "b1f49096-8b79-4046-be00-fe9ab5723bec",
-      "createdAt": "2026-03-22T18:51:57.588Z",
+      "requestId": "8362a9ab-7da7-4a76-8060-59d304399f83",
+      "createdAt": "2026-03-12T18:17:26.770Z",
       "cashier": "rep1",
-      "customerName": "3 Brothers Fast Food",
-      "customerPhone": "",
+      "customerName": "221b hotel",
+      "customerPhone": "09884356644",
       "lorry": "Lorry A",
       "paymentType": "cash",
       "notes": "",
-      "discount": 120,
+      "discount": 0,
       "taxRate": 0,
       "payments": [
         {
-          "id": "FCjxuMJ_ot2X",
-          "method": "cheque",
-          "amount": 2088,
-          "chequeNo": "0315678",
-          "chequeDate": "2026-04-01",
-          "chequeBank": "HNB",
-          "createdAt": "2026-03-31T17:09:56.558Z",
+          "id": "uGIryMDkyybS",
+          "method": "cash",
+          "amount": 744,
+          "createdAt": "2026-03-12T18:17:49.990Z",
           "receivedBy": "admin"
         }
       ],
       "lines": [
         {
-          "productId": "p-FSol18n8",
-          "name": "Cream Soda 200 ml",
-          "size": "200 ml",
-          "category": "Glass",
-          "quantity": 24,
-          "basePrice": 92,
+          "productId": "p-vDX-heC_",
+          "name": "Mountain Dew 1500 ml",
+          "quantity": 2,
+          "basePrice": 372,
           "itemDiscount": 0,
           "itemDiscountMode": "amount",
-          "price": 92
+          "price": 372
         }
       ],
-      "subTotal": 2208,
-      "discountAmount": 120,
-      "taxable": 2088,
+      "subTotal": 744,
+      "discountAmount": 0,
+      "taxable": 744,
       "tax": 0,
-      "total": 2088,
-      "paidAmount": 2088,
+      "total": 744,
+      "paidAmount": 0,
       "dueAmount": 0,
-      "cashReceived": null,
+      "cashReceived": 744,
       "creditDueDate": "",
-      "chequeAmount": 2088,
-      "chequeNo": "0315678",
-      "chequeDate": "2026-04-01",
-      "chequeBank": "HNB",
-      "returnedAmount": 0,
-      "refundDueAmount": 0,
+      "chequeAmount": null,
+      "chequeNo": "",
+      "chequeDate": "",
+      "chequeBank": "",
+      "returnedAmount": 744,
+      "refundDueAmount": 744,
       "undeliveredAmount": 0,
-      "netTotalAfterReturns": 2088,
+      "netTotalAfterReturns": 0,
       "outstandingAmount": 0,
       "deliveryAdjustments": [],
-      "deliveryConfirmedAt": "2026-03-31T17:09:56.558Z",
+      "deliveryConfirmedAt": "2026-03-12T18:17:49.990Z",
       "deliveryConfirmedBy": "admin"
     }
   ],
-  "returns": [],
-  "stockMovements": [
+  "returns": [
     {
-      "id": "TCtJk5ttZnJ3",
-      "at": "2026-04-09T03:18:20.662Z",
-      "action": "update_stock",
-      "by": "admin",
-      "productId": "p-GsgOhytX",
-      "sku": "7UP200",
-      "name": "7UP",
-      "beforeStock": 10,
-      "changeQty": 10,
-      "afterStock": 20
+      "id": "9Efc69-nZRha",
+      "saleId": "00003",
+      "rep": "rep1",
+      "createdAt": "2026-03-12T20:07:49.425Z",
+      "totalAmount": 92,
+      "lines": [
+        {
+          "productId": "p-3FWsPhiW",
+          "name": "Sting 200 ml",
+          "quantity": 1,
+          "condition": "good",
+          "baseUnitPrice": 92,
+          "soldUnitPrice": 92,
+          "unitItemDiscount": 0,
+          "itemDiscountMode": "amount",
+          "itemDiscountValue": 0,
+          "grossAmount": 92,
+          "billDiscountShare": 0,
+          "returnUnitPrice": 92,
+          "returnAmount": 92
+        }
+      ]
     },
     {
-      "id": "LnHALx8UwZkR",
-      "at": "2026-04-09T03:17:06.311Z",
-      "action": "update_stock",
-      "by": "admin",
-      "productId": "p-GsgOhytX",
-      "sku": "7UP200",
-      "name": "7UP",
-      "beforeStock": 0,
-      "changeQty": 10,
-      "afterStock": 10
+      "id": "JyS9maMBeJhA",
+      "saleId": "00002",
+      "rep": "rep1",
+      "createdAt": "2026-03-12T20:03:21.472Z",
+      "totalAmount": 184,
+      "lines": [
+        {
+          "productId": "p-3FWsPhiW",
+          "name": "Sting 200 ml",
+          "quantity": 1,
+          "condition": "good",
+          "baseUnitPrice": 92,
+          "soldUnitPrice": 92,
+          "unitItemDiscount": 0,
+          "itemDiscountMode": "amount",
+          "itemDiscountValue": 0,
+          "grossAmount": 92,
+          "billDiscountShare": 0,
+          "returnUnitPrice": 92,
+          "returnAmount": 92
+        },
+        {
+          "productId": "p-Z5VSCHCv",
+          "name": "Mountain Dew 200 ml",
+          "quantity": 1,
+          "condition": "good",
+          "baseUnitPrice": 92,
+          "soldUnitPrice": 92,
+          "unitItemDiscount": 0,
+          "itemDiscountMode": "amount",
+          "itemDiscountValue": 0,
+          "grossAmount": 92,
+          "billDiscountShare": 0,
+          "returnUnitPrice": 92,
+          "returnAmount": 92
+        }
+      ]
+    },
+    {
+      "id": "Rjx_MFWU8IyS",
+      "saleId": "00001",
+      "rep": "rep1",
+      "createdAt": "2026-03-12T18:59:39.856Z",
+      "totalAmount": 744,
+      "lines": [
+        {
+          "productId": "p-vDX-heC_",
+          "name": "Mountain Dew 1500 ml",
+          "quantity": 2,
+          "condition": "good",
+          "baseUnitPrice": 372,
+          "soldUnitPrice": 372,
+          "unitItemDiscount": 0,
+          "itemDiscountMode": "amount",
+          "itemDiscountValue": 0,
+          "grossAmount": 744,
+          "billDiscountShare": 0,
+          "returnUnitPrice": 372,
+          "returnAmount": 744
+        }
+      ]
     }
   ],
   "customers": [
@@ -1631,9 +1143,7 @@
       "name": "A h essence",
       "phone": "07776655442",
       "address": "23 Matawan road warakamura",
-      "createdAt": "2026-03-10T14:29:36.296Z",
-      "openingOutstanding": 110000,
-      "creditLimit": 100000
+      "createdAt": "2026-03-10T14:29:36.296Z"
     },
     {
       "id": "3bPeS0L7ha_c",
@@ -2879,8 +2389,7 @@
       "name": "4 MAILE STORES",
       "phone": "",
       "address": "No,4 mail post, Matalapotiya, Walewela, Matale",
-      "createdAt": "2026-03-10T14:29:44.313Z",
-      "openingOutstanding": 123456
+      "createdAt": "2026-03-10T14:29:44.313Z"
     },
     {
       "id": "CQLlqtMWJw-J",
@@ -4210,8 +3719,7 @@
       "name": "Abesingha stores",
       "phone": "",
       "address": "150/3 Lidapitiya ,kaikawala",
-      "createdAt": "2026-03-10T14:30:02.105Z",
-      "openingOutstanding": 50000
+      "createdAt": "2026-03-10T14:30:02.105Z"
     },
     {
       "id": "B-L1JpHddxSJ",
@@ -4862,13 +4370,7 @@
       "name": "3 Brothers Fast Food",
       "phone": "",
       "address": "No.18,Godapola Road,Matale",
-      "createdAt": "2026-03-10T14:30:14.942Z",
-      "openingOutstanding": 0,
-      "creditLimit": 50000,
-      "discountLimit": 200,
-      "bundleDiscountLimit": 100,
-      "outstandingAdjustment": 2088,
-      "outstandingAdjustmentReason": ""
+      "createdAt": "2026-03-10T14:30:14.942Z"
     },
     {
       "id": "hDJmlyujzdgf",
@@ -7941,10 +7443,7 @@
       "name": "A m f store",
       "phone": "",
       "address": "Kuriwala ukwala",
-      "createdAt": "2026-03-10T14:31:38.944Z",
-      "openingOutstanding": 0,
-      "creditLimit": 0,
-      "discountLimit": 1000
+      "createdAt": "2026-03-10T14:31:38.944Z"
     },
     {
       "id": "7igmSGmcx1_v",
@@ -9090,6 +8589,13 @@
   ],
   "staff": [
     {
+      "id": "tM0TczMBeqly",
+      "name": "Mayura",
+      "role": "Rep",
+      "phone": "0776555183",
+      "createdAt": "2026-03-04T20:13:55.519Z"
+    },
+    {
       "id": "Nn4vzoC-QW_H",
       "name": "Rep 2",
       "role": "Rep",
@@ -9130,14 +8636,95 @@
       "role": "Cashier",
       "phone": "",
       "createdAt": "2026-03-11T20:23:51.970Z"
-    },
-    {
-      "id": "IipATa5Rddde",
-      "name": "Jayanga",
-      "role": "Manager",
-      "phone": "",
-      "createdAt": "2026-03-17T18:44:01.603Z"
     }
   ],
-  "customerCredits": []
+  "customerCredits": [
+    {
+      "id": "ZdGPHR8BPLHe",
+      "customerName": "221b hotel",
+      "saleId": "00004",
+      "returnId": "",
+      "amount": 92,
+      "remainingAmount": 92,
+      "status": "open",
+      "createdAt": "2026-03-12T20:08:58.363Z",
+      "createdBy": "admin",
+      "source": "delivery_adjustment"
+    },
+    {
+      "id": "qHiJX4cE4wgr",
+      "customerName": "221b hotel",
+      "saleId": "00003",
+      "returnId": "9Efc69-nZRha",
+      "amount": 92,
+      "remainingAmount": 92,
+      "status": "open",
+      "createdAt": "2026-03-12T20:07:49.429Z",
+      "createdBy": "rep1"
+    },
+    {
+      "id": "jmR40dMkoT-u",
+      "customerName": "221b hotel",
+      "saleId": "00003",
+      "returnId": "",
+      "amount": 92,
+      "remainingAmount": 92,
+      "status": "open",
+      "createdAt": "2026-03-12T20:04:31.741Z",
+      "createdBy": "admin",
+      "source": "delivery_adjustment"
+    },
+    {
+      "id": "a0fW98tmL2S9",
+      "customerName": "221b hotel",
+      "saleId": "00002",
+      "returnId": "JyS9maMBeJhA",
+      "amount": 184,
+      "remainingAmount": 8,
+      "status": "partial",
+      "createdAt": "2026-03-12T20:03:21.476Z",
+      "createdBy": "rep1",
+      "usedAt": "2026-03-12T20:08:29.522Z",
+      "usageHistory": [
+        {
+          "saleId": "00004",
+          "amount": 176,
+          "createdAt": "2026-03-12T20:08:29.522Z",
+          "by": "rep1"
+        }
+      ]
+    },
+    {
+      "id": "IDVLq0UXjGtQ",
+      "customerName": "221b hotel",
+      "saleId": "00001",
+      "returnId": "Rjx_MFWU8IyS",
+      "amount": 744,
+      "remainingAmount": 0,
+      "status": "used",
+      "createdAt": "2026-03-12T18:59:39.859Z",
+      "createdBy": "rep1",
+      "usedAt": "2026-03-12T20:08:29.522Z",
+      "usageHistory": [
+        {
+          "saleId": "00002",
+          "amount": 184,
+          "createdAt": "2026-03-12T19:54:14.453Z",
+          "by": "rep1"
+        },
+        {
+          "saleId": "00003",
+          "amount": 368,
+          "createdAt": "2026-03-12T20:03:57.929Z",
+          "by": "rep1"
+        },
+        {
+          "saleId": "00004",
+          "amount": 192,
+          "createdAt": "2026-03-12T20:08:29.522Z",
+          "by": "rep1"
+        }
+      ]
+    }
+  ]
 }

@@ -1,5 +1,5 @@
 ﻿import { useEffect, useMemo, useState } from "react";
-import { Image, Pressable, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, Vibration, View } from "react-native";
+import { Pressable, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, Vibration, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { io } from "socket.io-client";
 import { calculateTotals, PAYMENT_TYPES, SOCKET_EVENTS } from "@pepsi/shared";
@@ -22,8 +22,8 @@ const LoginScreen = ({ onSubmit, error, apiBase }) => {
 
   return (
     <View style={styles.loginWrap}>
-      <Image source={require("./assets/Pepsi.png")} style={styles.mobileLogo} resizeMode="contain" />
-      <Text style={styles.loginTitle}>Pepsi POS</Text>
+      <Text style={styles.mobileLogo}>SLS</Text>
+      <Text style={styles.loginTitle}>SLS POS</Text>
       <Text style={styles.loginHint}>API: {apiBase}</Text>
       <Text style={styles.loginFieldLabel}>Credentials</Text>
       <TextInput value={username} onChangeText={setUsername} placeholder="Username" style={styles.input} autoCapitalize="none" />
@@ -354,8 +354,8 @@ export default function App() {
     <View style={styles.app}>
       <StatusBar style="dark" />
       <View style={styles.topRow}>
-        <Image source={require("./assets/Pepsi.png")} style={styles.topLogo} resizeMode="contain" />
-        <Text style={styles.title}>Pepsi POS - Android ({session.user?.role})</Text>
+        <Text style={styles.topLogo}>SLS</Text>
+        <Text style={styles.title}>SLS POS - Android ({session.user?.role})</Text>
         <TouchableOpacity onPress={logout} style={styles.logout}>
           <Text style={styles.logoutLabel}>Logout</Text>
         </TouchableOpacity>
@@ -508,7 +508,7 @@ export default function App() {
 const styles = StyleSheet.create({
   app: { flex: 1, backgroundColor: "#000000", paddingTop: 42 },
   topRow: { flexDirection: "row", justifyContent: "space-between", alignItems: "center", paddingHorizontal: 16 },
-  topLogo: { width: 32, height: 32, marginRight: 8 },
+  topLogo: { width: 46, marginRight: 8, color: "#1264aa", fontSize: 18, fontWeight: "900", letterSpacing: 2 },
   title: { fontSize: 18, fontWeight: "700", color: "#083d77", flex: 1, paddingRight: 8 },
   logout: { backgroundColor: "#113a60", borderRadius: 8, paddingHorizontal: 10, paddingVertical: 8 },
   logoutLabel: { color: "#fff", fontWeight: "700", fontSize: 12 },
@@ -548,7 +548,7 @@ const styles = StyleSheet.create({
   qtyWrap: { flexDirection: "row", alignItems: "center", gap: 8 },
   qtyBtn: { borderWidth: 1, borderColor: "#aac3de", borderRadius: 6, width: 28, height: 28, alignItems: "center", justifyContent: "center" },
   loginWrap: { flex: 1, paddingHorizontal: 16, paddingTop: 60, gap: 10 },
-  mobileLogo: { width: 74, height: 74, marginBottom: 6 },
+  mobileLogo: { marginBottom: 6, color: "#1264aa", fontSize: 42, fontWeight: "900", letterSpacing: 8 },
   loginTitle: { fontSize: 28, fontWeight: "800", color: "#0f365f" },
   loginSub: { color: "#4d6781", marginBottom: 8 },
   loginFieldLabel: { color: "#334e68", fontWeight: "700", marginTop: 4 },

@@ -480,7 +480,6 @@ const openSaleReceiptPrint = ({
   const customer = (customers || []).find(
     (row) => String(row?.name || "").trim().toLowerCase() === pickedCustomer.toLowerCase()
   );
-  const printedCustomerPhone = String(sale?.customerPhone || customer?.phone || "-").trim() || "-";
 
     const baseLines = Array.isArray(sale?.lines) ? sale.lines : [];
     const rawBillDiscount = Number(sale?.discountAmount || sale?.discount || 0);
@@ -514,6 +513,7 @@ const openSaleReceiptPrint = ({
       const bundles = bundleSize ? Math.floor(qty / bundleSize) : 0;
       const singles = bundleSize ? qty % bundleSize : qty;
       return {
+        description: line?.name || productDisplayName(product) || product?.name || sku,
         sku,
         qty,
         billingPrice,
@@ -553,9 +553,16 @@ const openSaleReceiptPrint = ({
   ];
 
   const rowsHtml = lines
-    .map((line) => `<tr><td>${escapeHtml(line.sku)}${line.undeliveredQty > 0 ? `<div class="return-print-note">Not Delivered ${line.undeliveredQty}</div>` : ""}${line.returnedQty > 0 ? `<div class="return-print-note">Returned ${line.returnedQty}</div>` : ""}</td><td>${line.bundleSize > 0 ? `<div class="qty-breakdown-large">${line.bundles} Bundles ${line.singles} Singles</div>` : `<div class="qty-breakdown-large">${line.singles} Singles</div>`}</td><td>${toMoney(line.billingPrice)}</td><td>${toMoney(line.itemDiscount)}${hasAdjustedLines && line.billDiscountShare > 0 ? `<div class="return-print-note">Bill disc. ${toMoney(line.billDiscountShare)}</div>` : ""}</td><td>${toMoney(line.total)}${hasAdjustedLines && line.returnedAmount > 0 ? `<div class="return-print-note">- ${toMoney(line.returnedAmount)}</div>` : ""}</td></tr>`)
+    .map((line, index) => {
+      const amountParts = toMoney(line.total).split(".");
+      const qtyLabel = line.bundleSize > 0 ? `${line.bundles}B ${line.singles}S` : String(line.singles);
+      return `<tr><td>${index + 1}</td><td><strong>${escapeHtml(line.description || line.sku || "-")}</strong>${line.sku ? `<div class="item-code">${escapeHtml(line.sku)}</div>` : ""}${line.undeliveredQty > 0 ? `<div class="return-print-note">Not Delivered ${line.undeliveredQty}</div>` : ""}${line.returnedQty > 0 ? `<div class="return-print-note">Returned ${line.returnedQty}</div>` : ""}</td><td>${escapeHtml(qtyLabel)}</td><td>${toMoney(line.billingPrice)}</td><td>${escapeHtml(amountParts[0] || "0")}</td><td>${escapeHtml(amountParts[1] || "00")}</td></tr>`;
+    })
     .join("");
+  const minimumPrintRows = 14;
+  const blankRowsHtml = Array.from({ length: Math.max(0, minimumPrintRows - lines.length) }, () => `<tr class="blank-row"><td>&nbsp;</td><td></td><td></td><td></td><td></td><td></td></tr>`).join("");
   const summaryRowsHtml = summaryRows
+    .filter((row) => row.label !== "Line Subtotal")
     .map((row) => `<div class="summary-row ${row.tone === "deduction" ? "is-deduction" : ""}"><span>${escapeHtml(row.label)}</span><strong>${row.value < 0 ? "- " : ""}LKR ${toMoney(Math.abs(row.value))}</strong></div>`)
     .join("");
   const bundleGuideText = [...new Set(lines.map((line) => String(line.bundleRule || "").trim()).filter(Boolean))].join(" | ");
@@ -567,46 +574,36 @@ const openSaleReceiptPrint = ({
   }
 
   const receiptHtml = `<!doctype html><html><head><meta charset="utf-8" /><title>Receipt #${escapeHtml(sale.id)}</title><style>
-@page { size: A4 portrait; margin: 10mm; } body { margin: 0; background: #fff; font-family: "Segoe UI", Arial, sans-serif; color: #111; }
-.sheet { width: 100%; max-width: 190mm; margin: 0 auto; padding: 4mm; } .header { background: linear-gradient(180deg, #dadde2 0%, #d4d8de 100%); border: 1px solid #ced2d8; padding: 12px 14px; display: grid; grid-template-columns: 96px 1fr; gap: 16px; align-items: center; }
-.logo-wrap { display: grid; justify-items: center; align-content: center; gap: 2px; } .logo-wrap img { width: 72px; height: 72px; object-fit: contain; } .logo-wrap span { font-size: 10px; color: #1d3f74; font-weight: 700; letter-spacing: 0.02em; }
-.brand-title { text-align: center; font-weight: 900; font-size: 23px; line-height: 1.02; letter-spacing: 0.28px; text-transform: uppercase; }
-.brand-sub { margin: 8px auto 0; width: fit-content; background: rgba(255,255,255,0.96); border: 1px solid #d9dde4; box-shadow: inset 0 1px 0 rgba(255,255,255,0.75); border-radius: 999px; padding: 6px 18px 7px; font-size: 18px; font-weight: 800; letter-spacing: 0.01em; }
-.meta { margin-top: 12px; border: 1px solid #1f2937; border-radius: 16px; padding: 8px 10px; display: grid; grid-template-columns: 54px 1fr; gap: 12px; align-items: start; }
-  .meta-box { border: 1px solid #1f2937; height: 76px; margin-top: 4px; } .meta-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, 0.86fr); gap: 4px 20px; font-size: 16px; line-height: 1.2; align-items: start; }
-  .dots { border-bottom: 1px dotted #222; min-width: 150px; display: inline-block; margin-left: 5px; } .invoice-dots { border-bottom-style: solid; border-bottom-color: #0f4fa8; color: #0f2d56; font-weight: 900; background: linear-gradient(180deg, rgba(220,236,255,0.45) 0%, rgba(220,236,255,0) 100%); padding: 0 4px 1px; border-radius: 6px; } table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 16px; }
-  th, td { border: 1px solid #111; padding: 4px 6px; text-align: left; height: 26px; } th { background: #d9e0ea; font-size: 16px; font-weight: 800; text-transform: uppercase; }
-  th:nth-child(2), td:nth-child(2), th:nth-child(3), td:nth-child(3), th:nth-child(4), td:nth-child(4), th:nth-child(5), td:nth-child(5) { text-align: center; }
+@page { size: A4 portrait; margin: 8mm; } body { margin: 0; background: #fff; font-family: Georgia, "Times New Roman", serif; color: #102033; }
+.sheet { width: 100%; max-width: 194mm; margin: 0 auto; padding: 2mm 3mm; }
+.header { display: grid; justify-items: center; align-items: center; padding: 2mm 4mm 1.8mm; border-top: 1px solid #c4c4c4; border-bottom: 2px solid #1b68aa; text-align: center; color: #003f82; }
+.logo-text { font-family: "Arial Black", Arial, Helvetica, sans-serif; font-size: 42px; line-height: 0.92; font-weight: 900; letter-spacing: 18px; color: #1264aa; white-space: nowrap; margin-left: 18px; }
+.brand-kicker { margin-top: 2px; max-width: 150mm; font-size: 11px; line-height: 1.15; font-weight: 800; color: #003f82; text-align: center; }
+.meta { margin-top: 5mm; display: grid; grid-template-columns: minmax(0, 1fr) 62mm; gap: 14mm; font-size: 16px; color: #102033; }
+.field-line { display: flex; align-items: end; min-height: 24px; margin-bottom: 6px; }
+.field-line span:first-child { flex: 0 0 auto; }
+.dots { border-bottom: 1px dotted #25364c; min-width: 0; flex: 1 1 auto; display: inline-block; margin-left: 6px; padding: 0 5px 1px; font-family: "Segoe UI", Arial, sans-serif; font-size: 14px; color: #0f2d56; }
+table { width: 100%; border-collapse: collapse; margin-top: 4mm; table-layout: fixed; font-family: "Segoe UI", Arial, sans-serif; }
+col.no { width: 11%; } col.desc { width: 43%; } col.qty { width: 12%; } col.rate { width: 14%; } col.rs { width: 13%; } col.cts { width: 7%; }
+th, td { border: 1px solid #1d4f83; padding: 5px 6px; text-align: left; height: 27px; font-size: 13px; vertical-align: top; }
+th { background: #145c9d; color: #fff; font-size: 14px; font-weight: 800; text-align: center; }
+td:nth-child(1), td:nth-child(3), td:nth-child(4), td:nth-child(5), td:nth-child(6) { text-align: center; }
+.blank-row td { height: 31px; }
+.item-code { margin-top: 1px; font-size: 10px; color: #496174; font-weight: 700; }
   .return-print-note { margin-top: 2px; color: #9f1d1d; font-size: 11px; font-weight: 700; line-height: 1.2; }
-  .qty-breakdown-large { color: #8b1414; font-size: 16px; font-weight: 900; line-height: 1.22; text-align: center; }
-  .totals-grid { margin-top: 16px; display: grid; grid-template-columns: 1fr 1.22fr; gap: 14px; align-items: stretch; }
-  .totals-box, .summary-box { border: 1px solid #cfd6e2; border-radius: 16px; min-height: 104px; padding: 14px 16px; font-size: 16px; }
-  .totals-box { background: linear-gradient(180deg, #fbfdff 0%, #f1f6fc 100%); }
-  .summary-box { background: linear-gradient(180deg, #f8fbff 0%, #e7eef8 100%); border-color: #b9c8db; box-shadow: inset 0 1px 0 rgba(255,255,255,0.65); }
-  .totals-title { font-size: 13px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; color: #39506c; margin-bottom: 10px; }
-  .totals-box .summary-row strong, .summary-box .summary-row strong { font-size: 17px; }
-  .summary-row { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 6px 0; border-bottom: 1px solid rgba(57,80,108,0.12); }
-  .summary-row:last-child { border-bottom: 0; }
-  .summary-row span { color: #334155; font-weight: 700; }
-  .summary-row strong { color: #0f172a; font-weight: 900; }
-  .summary-row.is-deduction strong { color: #a32020; }
-  .summary-total { margin-top: 12px; padding-top: 12px; border-top: 2px solid rgba(15,23,42,0.18); display: flex; justify-content: space-between; align-items: end; gap: 12px; }
-  .summary-total span { font-size: 14px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; color: #28476d; }
-  .summary-total strong { font-size: 28px; color: #0b203a; line-height: 1; }
-  .payment-line { margin-top: 10px; padding: 10px 12px; border-radius: 12px; background: rgba(255,255,255,0.72); border: 1px solid rgba(97,122,156,0.2); font-size: 14px; font-weight: 800; color: #23364f; }
-  .payment-line span { display: block; font-size: 11px; font-weight: 900; letter-spacing: 0.08em; text-transform: uppercase; color: #5f738f; margin-bottom: 3px; }
-  .bundle-guide-line { margin-top: 14px; padding: 9px 12px; border: 1px solid rgba(57,80,108,0.18); border-radius: 12px; background: rgba(242,247,253,0.78); font-size: 13px; line-height: 1.45; color: #28476d; }
-  .bundle-guide-line span { font-weight: 900; text-transform: uppercase; letter-spacing: 0.06em; font-size: 11px; color: #48617f; margin-right: 8px; }
-  .notes { margin-top: 16px; font-size: 18px; font-weight: 600; line-height: 1.45; }
-.notes li { margin-bottom: 3px; } .signatures { margin-top: 70px; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; text-align: center; font-size: 18px; }
-.sign-line { margin-bottom: 8px; letter-spacing: 2px; } .powered { text-align: center; margin-top: 80px; font-size: 20px; }
+.footer-grid { margin-top: 6mm; display: grid; grid-template-columns: 1fr 70mm; gap: 10mm; align-items: start; font-family: "Segoe UI", Arial, sans-serif; }
+.totals-box { border: 1px solid #1d4f83; min-height: 70px; padding: 7px 9px; font-size: 13px; }
+.summary-row, .summary-total, .payment-line { display: flex; justify-content: space-between; gap: 10px; padding: 3px 0; }
+.summary-total { margin-top: 5px; border-top: 2px solid #1d4f83; font-weight: 900; font-size: 17px; }
+.notes { margin: 0; padding-left: 18px; font-size: 13px; line-height: 1.45; }
+.signatures { margin-top: 16mm; display: grid; grid-template-columns: 1fr 1fr; gap: 30px; text-align: center; font-size: 14px; font-family: "Segoe UI", Arial, sans-serif; }
+.sign-line { margin-bottom: 6px; letter-spacing: 2px; } .powered { text-align: center; margin-top: 12mm; font-size: 12px; font-family: "Segoe UI", Arial, sans-serif; color: #455b70; }
   </style></head><body><div class="sheet">
-<div class="header"><div class="logo-wrap"><img src="/invoice-pepsi.png" alt="Pepsi logo" /></div><div><div class="brand-title">M.W.M.B CHANDRASEKARA<br/>MATALE DISTRIBUTOR</div><div class="brand-sub">Tenna - Matale. Tel : 076-0470123</div></div></div>
-<div class="meta"><div class="meta-box"></div><div class="meta-grid"><div>Name : <span class="dots">${escapeHtml(pickedCustomer)}</span></div><div>Date : <span class="dots">${escapeHtml(dateLabel)}</span></div><div>Address : <span class="dots">${escapeHtml(customer?.address || "-")}</span></div><div>Tel : <span class="dots">${escapeHtml(printedCustomerPhone)}</span></div><div>Rep : <span class="dots">${escapeHtml(sale?.cashier || "-")}</span></div><div>Invoice No : <span class="dots invoice-dots">${escapeHtml(sale?.id || "-")}</span></div><div>Lorry : <span class="dots">${escapeHtml(sale?.lorry || "-")}</span></div><div></div></div></div>
-<table><thead><tr><th>Item Code</th><th>Qty</th><th>Billing Price</th><th>Item Discount</th><th>Total</th></tr></thead><tbody>${rowsHtml}</tbody></table>
+<div class="header"><div class="logo-text">SLS</div><div class="brand-kicker">General merchants &amp; whole sale and retail dealers in rice, oil, dried fish,<br/>prawns, bomba duck, golden enchovy and all kinds of fish products</div></div>
+<div class="meta"><div class="field-line"><span>Customer :</span><span class="dots">${escapeHtml(pickedCustomer)}</span></div><div class="field-line"><span>Date :</span><span class="dots">${escapeHtml(dateLabel)}</span></div></div>
+<table><colgroup><col class="no"/><col class="desc"/><col class="qty"/><col class="rate"/><col class="rs"/><col class="cts"/></colgroup><thead><tr><th>No</th><th>Description</th><th>Qty</th><th>Rate</th><th>Rs</th><th>Cts</th></tr></thead><tbody>${rowsHtml}${blankRowsHtml}</tbody></table>
 ${bundleGuideText ? `<div class="bundle-guide-line"><span>Bundle Count</span>${escapeHtml(bundleGuideText)}</div>` : ""}
- <div class="totals-grid"><div class="totals-box"><div class="totals-title">Empty Summary</div><div class="summary-row"><span>Empty Issue</span><strong>-</strong></div><div class="summary-row"><span>Empty Received</span><strong>-</strong></div></div><div class="summary-box"><div class="totals-title">Receipt Summary</div>${summaryRowsHtml}<div class="summary-total"><span>Total Value</span><strong>LKR ${toMoney(printedTotal)}</strong></div><div class="payment-line"><span>Payment</span>${escapeHtml(paymentDisplay.label)}${paymentDisplay.detail ? ` (${escapeHtml(paymentDisplay.detail)})` : ""}</div></div></div>
-<ul class="notes"><li>Return or exchange only with this receipt</li><li>Credit Payment for all goods shall be made No later than 14 days</li></ul>
+ <div class="footer-grid"><ul class="notes"><li>Return or exchange only with this receipt</li><li>Credit Payment for all goods shall be made no later than 14 days</li></ul><div class="totals-box"><div class="summary-row"><span>Line Subtotal</span><strong>LKR ${toMoney(lineSubtotal)}</strong></div>${summaryRowsHtml}<div class="summary-total"><span>Total Value</span><strong>LKR ${toMoney(printedTotal)}</strong></div><div class="payment-line"><span>Payment</span><strong>${escapeHtml(paymentDisplay.label)}${paymentDisplay.detail ? ` (${escapeHtml(paymentDisplay.detail)})` : ""}</strong></div></div></div>
 <div class="signatures"><div><div class="sign-line">.......................................</div><div>Customer Signature</div><div>Rubber Stamp</div></div><div><div class="sign-line">.......................................</div><div>P.S.R Signature</div></div></div>
 <div class="powered">Powered By J&amp;Co.</div></div></body></html>`;
 
@@ -626,7 +623,7 @@ const LoginScreen = ({ onLogin, error }) => {
     <div className="auth-shell">
       <div className="auth-card">
         <div className="auth-brand">
-          <img src="/pepsi-logo.svg" alt="Pepsi logo" />
+          <img src="/sls-logo.svg" alt="SLS logo" />
         </div>
         <div className="auth-login-title">
           <h2 className="auth-welcome">Welcome Back</h2>
@@ -664,9 +661,9 @@ const Header = ({ dashboard, user, onLogout, managerFullAccess = false }) => {
     <header className="topbar">
       <div className="header-card">
         <div className="brand">
-          <img className="brand-logo" src="/pepsi-logo.png" alt="Pepsi logo" />
+          <img className="brand-logo" src="/sls-logo.svg" alt="SLS logo" />
           <div className="brand-copy">
-            <h1>Pepsi Distributer</h1>
+            <h1>SLS</h1>
             <p className="brand-user">{headerUser}</p>
             <p className="brand-role">{roleLabel}</p>
             {user.role === "manager" ? (
@@ -4364,10 +4361,10 @@ const AdminView = ({ state, dashboard, message, onError, requestConfirm, onSaleD
 <body>
   <div class="sheet">
     <div class="head">
-      <img src="/invoice-pepsi.png" alt="Pepsi" />
+      <img src="/sls-logo.svg" alt="SLS" />
       <div>
         <h1>${escapeHtml(lorry)} Loading Breakdown</h1>
-        <p>Pepsi Distributor POS • Date Range: ${escapeHtml(dateRangeLabel)}</p>
+        <p>SLS POS &bull; Date Range: ${escapeHtml(dateRangeLabel)}</p>
       </div>
     </div>
     <div class="kpis">
@@ -4454,7 +4451,7 @@ const AdminView = ({ state, dashboard, message, onError, requestConfirm, onSaleD
 <body>
   <div class="sheet">
     <div class="head">
-      <img src="/invoice-pepsi.png" alt="Pepsi" />
+      <img src="/sls-logo.svg" alt="SLS" />
       <div>
         <h1>${escapeHtml(rep)} Customer Outstanding</h1>
         <p>Outstanding customer summary by rep</p>
@@ -4555,7 +4552,7 @@ const AdminView = ({ state, dashboard, message, onError, requestConfirm, onSaleD
       <tbody>${bodyRows}</tbody>
     </table>
     <div class="footer">
-      <div>Pepsi Distributor POS</div>
+      <div>SLS POS</div>
       <div>J&amp;Co. Software Solutions</div>
     </div>
   </div>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="SLS">
+  <rect width="512" height="512" rx="108" fill="#f7fbff"/>
+  <rect x="34" y="34" width="444" height="444" rx="82" fill="none" stroke="#1264aa" stroke-width="22"/>
+  <text x="256" y="304" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="132" font-weight="700" letter-spacing="34" fill="#1264aa">SLS</text>
+</svg>

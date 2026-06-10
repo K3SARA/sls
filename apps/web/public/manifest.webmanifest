@@ -1,19 +1,19 @@
 {
-  "name": "Pepsi POS",
-  "short_name": "Pepsi POS",
+  "name": "SLS POS",
+  "short_name": "SLS POS",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f5f7fa",
-  "theme_color": "#005cb9",
+  "theme_color": "#1264aa",
   "icons": [
     {
-      "src": "/pepsi-title-logo-shortcut.svg",
+      "src": "/sls-title-logo.svg",
       "type": "image/svg+xml",
       "sizes": "any",
       "purpose": "any maskable"
     },
     {
-      "src": "/pepsi-title-logo-shortcut.svg",
+      "src": "/sls-title-logo.svg",
       "type": "image/svg+xml",
       "sizes": "any",
       "purpose": "any"

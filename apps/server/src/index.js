@@ -1868,6 +1868,21 @@ io.on("connection", (socket) => {
   socket.emit(SOCKET_EVENTS.STATE_SYNC, getState());
 });
 
+// Serve web client static files if built
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const clientDistPath = path.join(__dirname, "../../../web/dist");
+
+if (fs.existsSync(clientDistPath)) {
+  app.use(express.static(clientDistPath));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(clientDistPath, "index.html"));
+  });
+  console.log("Serving web client static files from", clientDistPath);
+} else {
+  console.log("Web client static files path not found at", clientDistPath);
+}
+
 const port = Number(process.env.PORT || 4010);
 server.listen(port, () => {
   console.log(`POS API listening on http://localhost:${port}`);

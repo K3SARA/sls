@@ -1,0 +1,795 @@
+.rep-redesign-scope /* ==============================================
+   REP UI REDESIGN v3 — Modern Soft Pastel Theme
+   Safe CSS-only overrides. Production-safe.
+   ============================================== */
+
+/* --- Keyframes --- */
+@keyframes authFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pulseGlow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(56, 189, 108, 0.38);
+  }
+
+  50% {
+    box-shadow: 0 0 0 10px rgba(56, 189, 108, 0);
+  }
+}
+
+@keyframes floatBubble {
+
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-6px) scale(1.04);
+  }
+}.rep-redesign-scope /* ---------- LOGIN SCREEN ---------- */
+.auth-shell {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 1.2rem;
+  padding-top: 0;
+  background:
+    radial-gradient(ellipse at 20% 10%, rgba(167, 139, 250, 0.22), transparent 48%),
+    radial-gradient(ellipse at 80% 80%, rgba(96, 165, 250, 0.18), transparent 42%),
+    radial-gradient(ellipse at 50% 50%, rgba(244, 114, 182, 0.1), transparent 60%),
+    linear-gradient(160deg, #f0f4ff 0%, #faf5ff 34%, #fff1f7 66%, #ecfdf5 100%);
+}.rep-redesign-scope .auth-card {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 0;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px) saturate(1.6);
+  -webkit-backdrop-filter: blur(18px) saturate(1.6);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 32px;
+  padding: 2.2rem 1.8rem 1.8rem;
+  display: grid;
+  gap: 0.95rem;
+  box-shadow:
+    0 24px 48px rgba(99, 102, 241, 0.1),
+    0 8px 16px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  animation: authFadeIn 0.5s ease-out;
+}.rep-redesign-scope .auth-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}.rep-redesign-scope .auth-brand img {
+  width: 120px;
+  height: 120px;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+  margin: 0 auto;
+  display: block;
+  filter: drop-shadow(0 8px 16px rgba(99, 102, 241, 0.12));
+}.rep-redesign-scope .auth-login-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+  gap: 0.25rem;
+}.rep-redesign-scope .auth-welcome {
+  margin: 0;
+  font-size: 1.65rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  color: #0f172a;
+  -webkit-text-fill-color: #0f172a;
+}.rep-redesign-scope .auth-subtitle {
+  margin: 0;
+  color: #6b7b8d;
+  font-size: 0.9rem;
+  font-weight: 600;
+}.rep-redesign-scope .auth-fields {
+  display: grid;
+  gap: 0.7rem;
+}.rep-redesign-scope .auth-field {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1.5px solid rgba(148, 163, 184, 0.25);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: border-color 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}.rep-redesign-scope .auth-field:focus-within {
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+  background: #fff;
+}.rep-redesign-scope .auth-field-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  min-width: 48px;
+  height: 100%;
+  font-size: 1.15rem;
+  color: #0f172a;
+  user-select: none;
+}.rep-redesign-scope .auth-field input {
+  flex: 1;
+  padding: 0.82rem 0.85rem 0.82rem 0;
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1e293b;
+  outline: none;
+}.rep-redesign-scope .auth-field input::placeholder {
+  color: #94a3b8;
+  font-weight: 500;
+}.rep-redesign-scope .auth-error {
+  color: #e11d48 !important;
+  font-weight: 700;
+  font-size: 0.88rem;
+  text-align: center;
+  padding: 0.55rem;
+  background: rgba(225, 29, 72, 0.06);
+  border-radius: 12px;
+  border: 1px solid rgba(225, 29, 72, 0.12);
+}.rep-redesign-scope .auth-submit {
+  width: 100%;
+  min-height: 52px;
+  margin-top: 0.25rem;
+  background: #0f172a;
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: transform 150ms ease, box-shadow 150ms ease, filter 150ms ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}.rep-redesign-scope .auth-submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  filter: brightness(1.12);
+  background: #1e293b;
+}.rep-redesign-scope .auth-submit:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background: #0f172a;
+}.rep-redesign-scope .auth-bottom-logo {
+  position: fixed;
+  left: 50%;
+  bottom: -10rem;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+  margin-top: 50px;
+}.rep-redesign-scope .auth-bottom-logo img {
+  width: 52px;
+  height: auto;
+  opacity: 0.7;
+  transition: opacity 200ms ease;
+}.rep-redesign-scope .auth-bottom-logo img:hover {
+  opacity: 1;
+}.rep-redesign-scope /* ---------- NAV EMOJI ---------- */
+.nav-emoji {
+  margin-right: 0.42rem;
+  font-size: 1.08rem;
+  line-height: 1;
+}.rep-redesign-scope /* ---------- CASHIER TABS — Colorful Soft Pastel ---------- */
+.cashier-tabs {
+  display: flex;
+  gap: 0.42rem;
+  margin-bottom: 0.8rem;
+  padding: 0.35rem;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 20px;
+  border: 1px solid rgba(226, 232, 240, 0.7);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}.rep-redesign-scope .cashier-tabs button {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.32rem;
+  min-height: 42px;
+  padding: 0.42rem 0.55rem;
+  border-radius: 14px;
+  border: 1px solid transparent;
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition: all 180ms ease;
+  background: transparent;
+  color: #475569;
+}.rep-redesign-scope .cashier-tabs button:hover:not(.active) {
+  background: rgba(241, 245, 249, 0.9);
+}.rep-redesign-scope .cashier-tabs .cashier-nav-billing.active {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+  color: #1d4ed8;
+  border-color: rgba(59, 130, 246, 0.2);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.12);
+}.rep-redesign-scope .cashier-tabs .cashier-nav-returns.active {
+  background: linear-gradient(135deg, #fff1f2 0%, #fecdd3 100%);
+  color: #be123c;
+  border-color: rgba(244, 63, 94, 0.2);
+  box-shadow: 0 4px 12px rgba(244, 63, 94, 0.1);
+}.rep-redesign-scope .cashier-tabs .cashier-nav-sales.active {
+  background: linear-gradient(135deg, #faf5ff 0%, #e9d5ff 100%);
+  color: #7e22ce;
+  border-color: rgba(168, 85, 247, 0.2);
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.1);
+}.rep-redesign-scope .cashier-tabs .cashier-nav-stock.active {
+  background: linear-gradient(135deg, #fffbeb 0%, #fde68a 100%);
+  color: #b45309;
+  border-color: rgba(245, 158, 11, 0.22);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.1);
+}.rep-redesign-scope .cashier-tabs .cashier-nav-customers.active {
+  background: linear-gradient(135deg, #ecfdf5 0%, #a7f3d0 100%);
+  color: #047857;
+  border-color: rgba(16, 185, 129, 0.2);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.1);
+}.rep-redesign-scope /* ---------- CASHIER SIDEBAR — Colorful ---------- */
+.cashier-mobile-sidebar {
+  gap: 0.42rem;
+}.rep-redesign-scope .cashier-mobile-sidebar button {
+  display: flex;
+  align-items: center;
+  gap: 0.42rem;
+  min-height: 48px;
+  padding: 0.55rem 0.85rem;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: all 180ms ease;
+}.rep-redesign-scope .cashier-mobile-sidebar .cashier-nav-billing.active {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%) !important;
+  color: #1d4ed8 !important;
+  border-color: rgba(59, 130, 246, 0.25) !important;
+}.rep-redesign-scope .cashier-mobile-sidebar .cashier-nav-returns.active {
+  background: linear-gradient(135deg, #fff1f2 0%, #fecdd3 100%) !important;
+  color: #be123c !important;
+  border-color: rgba(244, 63, 94, 0.25) !important;
+}.rep-redesign-scope .cashier-mobile-sidebar .cashier-nav-sales.active {
+  background: linear-gradient(135deg, #faf5ff 0%, #e9d5ff 100%) !important;
+  color: #7e22ce !important;
+  border-color: rgba(168, 85, 247, 0.25) !important;
+}.rep-redesign-scope .cashier-mobile-sidebar .cashier-nav-stock.active {
+  background: linear-gradient(135deg, #fffbeb 0%, #fde68a 100%) !important;
+  color: #b45309 !important;
+  border-color: rgba(245, 158, 11, 0.25) !important;
+}.rep-redesign-scope .cashier-mobile-sidebar .cashier-nav-customers.active {
+  background: linear-gradient(135deg, #ecfdf5 0%, #a7f3d0 100%) !important;
+  color: #047857 !important;
+  border-color: rgba(16, 185, 129, 0.25) !important;
+}.rep-redesign-scope .cashier-mobile-sidebar .cashier-sidebar-logout {
+  margin-top: auto;
+  margin-top: 18rem;
+  background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%) !important;
+  color: #991b1b !important;
+  border: 1px solid rgba(239, 68, 68, 0.18) !important;
+}.rep-redesign-scope /* ---------- HEADER CARD ---------- */
+.header-card {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border-radius: 22px;
+  padding: 0.72rem 0.85rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}.rep-redesign-scope .brand-role {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.82rem;
+  font-weight: 600;
+}.rep-redesign-scope .logout-btn {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 0.42rem 0.95rem;
+  font-size: 0.82rem;
+  font-weight: 800;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
+  transition: all 150ms ease;
+}.rep-redesign-scope .logout-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #f87171 0%, #ef4444 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.3);
+}.rep-redesign-scope /* ---------- BILLING WIZARD SHELL ---------- */
+.rep-wizard-shell {
+  border-radius: 28px;
+  border-color: rgba(199, 210, 254, 0.5);
+  background: radial-gradient(circle at top right, rgba(196, 181, 253, 0.18), transparent 32%), radial-gradient(circle at bottom left, rgba(147, 197, 253, 0.14), transparent 38%), linear-gradient(180deg, #f8faff 0%, #f0f4ff 100%);
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}.rep-redesign-scope .rep-wizard-head {
+  background: linear-gradient(180deg, rgba(238, 242, 255, 0.95) 0%, rgba(238, 242, 255, 0.55) 100%);
+  border-bottom: 1px solid rgba(199, 210, 254, 0.45);
+}.rep-redesign-scope .rep-wizard-eyebrow {
+  color: #818cf8;
+}.rep-redesign-scope .rep-wizard-head h2 {
+  background: linear-gradient(135deg, #312e81 0%, #4338ca 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}.rep-redesign-scope .rep-wizard-meta {
+  background: linear-gradient(180deg, #fff 0%, #eef2ff 100%);
+  border: 1px solid rgba(199, 210, 254, 0.5);
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(99, 102, 241, 0.06);
+}.rep-redesign-scope /* ---------- WIZARD STEPS ---------- */
+.rep-wizard-step {
+  border-radius: 16px;
+  border: 1.5px solid rgba(203, 213, 225, 0.5);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(6px);
+  transition: all 200ms ease;
+}.rep-redesign-scope .rep-wizard-step span {
+  font-size: 1rem;
+  transition: all 200ms ease;
+}.rep-redesign-scope .rep-wizard-step.done {
+  border-color: rgba(34, 197, 94, 0.3);
+  background: linear-gradient(180deg, #f0fdf4 0%, #dcfce7 100%);
+}.rep-redesign-scope .rep-wizard-step.done span {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  color: #fff;
+}.rep-redesign-scope .rep-wizard-step.active {
+  border-color: rgba(99, 102, 241, 0.35);
+  background: linear-gradient(180deg, #eef2ff 0%, #e0e7ff 100%);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.14), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}.rep-redesign-scope .rep-wizard-step.active span {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+}.rep-redesign-scope /* ---------- STEP CARDS ---------- */
+.rep-step-customer .rep-step-card-primary {
+  background: radial-gradient(circle at top right, rgba(147, 197, 253, 0.35), transparent 34%), linear-gradient(180deg, #f0f7ff 0%, #dbeafe 100%);
+  border-color: rgba(147, 197, 253, 0.5);
+}.rep-redesign-scope .rep-step-items .rep-step-card-primary {
+  background: radial-gradient(circle at top right, rgba(196, 181, 253, 0.35), transparent 36%), linear-gradient(180deg, #faf5ff 0%, #ede9fe 100%);
+  border-color: rgba(196, 181, 253, 0.5);
+}.rep-redesign-scope .rep-step-cart .rep-step-card-primary {
+  background: radial-gradient(circle at top right, rgba(253, 186, 116, 0.35), transparent 34%), linear-gradient(180deg, #fffbeb 0%, #fef3c7 100%);
+  border-color: rgba(253, 186, 116, 0.45);
+}.rep-redesign-scope .rep-step-checkout .rep-step-card-primary {
+  background: radial-gradient(circle at top right, rgba(134, 239, 172, 0.35), transparent 34%), linear-gradient(180deg, #f0fdf4 0%, #dcfce7 100%);
+  border-color: rgba(134, 239, 172, 0.45);
+}.rep-redesign-scope .rep-step-card h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}.rep-redesign-scope /* ---------- CUSTOMER PICKER ---------- */
+.rep-picker-launch {
+  border-radius: 16px;
+  border: 1.5px solid rgba(147, 197, 253, 0.4);
+  background: linear-gradient(180deg, #fff 0%, #f0f7ff 100%);
+  box-shadow: 0 6px 14px rgba(59, 130, 246, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  transition: all 180ms ease;
+}.rep-redesign-scope .rep-picker-launch:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.12);
+  transform: translateY(-1px);
+}.rep-redesign-scope .rep-picker-launch strong {
+  color: #6366f1;
+  background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+  padding: 0.35rem 0.72rem;
+  border-radius: 10px;
+  font-size: 0.78rem;
+}.rep-redesign-scope .rep-customer-focus-card {
+  border-radius: 18px;
+  background: linear-gradient(180deg, #f0f7ff 0%, #dbeafe 100%);
+  border: 1px solid rgba(147, 197, 253, 0.4);
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.06);
+}.rep-redesign-scope /* ---------- PRODUCT CARDS ---------- */
+.rep-product-pick-card {
+  border-radius: 20px;
+  border: 1.5px solid rgba(196, 181, 253, 0.3);
+  background: radial-gradient(circle at top right, rgba(244, 114, 182, 0.08), transparent 40%), linear-gradient(180deg, #fff 0%, #faf5ff 100%);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  transition: all 200ms ease;
+}.rep-redesign-scope .rep-product-pick-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(99, 102, 241, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}.rep-redesign-scope .rep-product-pick-copy strong {
+  color: #1e1b4b !important;
+  font-weight: 800;
+}.rep-redesign-scope .catalog-bundle-btn {
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%) !important;
+  color: #1d4ed8 !important;
+  border: 1.5px solid rgba(59, 130, 246, 0.2) !important;
+  border-radius: 12px !important;
+  font-weight: 800 !important;
+  transition: all 150ms ease;
+}.rep-redesign-scope .catalog-bundle-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%) !important;
+  transform: translateY(-1px);
+}.rep-redesign-scope .catalog-single-btn {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%) !important;
+  color: #16a34a !important;
+  border: 1.5px solid rgba(34, 197, 94, 0.2) !important;
+  border-radius: 12px !important;
+  font-weight: 800 !important;
+  transition: all 150ms ease;
+}.rep-redesign-scope .catalog-single-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%) !important;
+  transform: translateY(-1px);
+}.rep-redesign-scope .add-feedback-btn {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 12px !important;
+  font-weight: 800 !important;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+  transition: all 150ms ease;
+}.rep-redesign-scope .add-feedback-btn:hover:not(:disabled) {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%) !important;
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.32) !important;
+  transform: translateY(-1px) !important;
+}.rep-redesign-scope .add-feedback-btn:disabled {
+  background: #cbd5e1 !important;
+  box-shadow: none;
+}.rep-redesign-scope /* ---------- CART ROWS ---------- */
+.rep-ui-2 .rep-cart-step-row {
+  border-radius: 18px;
+  border-color: rgba(253, 186, 116, 0.35);
+  background: radial-gradient(circle at top right, rgba(251, 191, 36, 0.12), transparent 30%), linear-gradient(180deg, #fffbeb 0%, #fef3c7 100%);
+  box-shadow: 0 8px 18px rgba(245, 158, 11, 0.06);
+}.rep-redesign-scope .rep-cart-summary-grid article, .rep-redesign-scope .rep-checkout-review-grid article {
+  border-radius: 16px;
+  border: 1.5px solid rgba(203, 213, 225, 0.4);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(6px);
+}.rep-redesign-scope .rep-cart-bundle-step-down {
+  background: linear-gradient(135deg, #fff1f2 0%, #fecdd3 100%) !important;
+  color: #be123c !important;
+  border: 1.5px solid rgba(244, 63, 94, 0.2) !important;
+  border-radius: 10px !important;
+}.rep-redesign-scope .rep-cart-bundle-step-up {
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%) !important;
+  color: #16a34a !important;
+  border: 1.5px solid rgba(34, 197, 94, 0.2) !important;
+  border-radius: 10px !important;
+}.rep-redesign-scope /* ---------- CHECKOUT ---------- */
+.rep-nav-action-complete {
+  animation: pulseGlow 2.2s ease-in-out infinite;
+}.rep-redesign-scope .rep-nav-action-complete .rep-nav-action-icon {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 10px rgba(34, 197, 94, 0.3);
+}.rep-redesign-scope /* ---------- WIZARD FOOTER ---------- */
+.rep-wizard-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  background: linear-gradient(135deg, #4338ca 0%, #6366f1 50%, #8b5cf6 100%);
+  box-shadow: 0 -4px 16px rgba(99, 102, 241, 0.15);
+}.rep-redesign-scope .rep-wizard-footer-actions .ghost {
+  background: rgba(255, 255, 255, 0.15) !important;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
+}.rep-redesign-scope .rep-wizard-footer-actions>button:not(.ghost):not(.checkout), .rep-redesign-scope .rep-wizard-footer-actions .checkout {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}.rep-redesign-scope .rep-nav-action-next .rep-nav-action-icon {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%) !important;
+  color: #1e293b !important;
+}.rep-redesign-scope /* ---------- CART FAB ---------- */
+.rep-cart-fab {
+  border-radius: 20px;
+  background: linear-gradient(180deg, #fff 0%, #f0f4ff 100%);
+  border: 1.5px solid rgba(99, 102, 241, 0.2);
+  box-shadow: 0 12px 28px rgba(99, 102, 241, 0.15);
+  animation: floatBubble 3.5s ease-in-out infinite;
+}.rep-redesign-scope .rep-cart-fab span {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.3);
+}.rep-redesign-scope /* ---------- SALES PAGE — Purple ---------- */
+.rep-productivity-panel {
+  background: radial-gradient(circle at top right, rgba(196, 181, 253, 0.2), transparent 36%), linear-gradient(180deg, #faf5ff 0%, #f5f3ff 100%);
+  border-color: rgba(196, 181, 253, 0.35);
+}.rep-redesign-scope .rep-productivity-grid article {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(6px);
+  border: 1.5px solid rgba(196, 181, 253, 0.3);
+  border-radius: 16px;
+}.rep-redesign-scope .rep-sales-panel {
+  background: radial-gradient(circle at top left, rgba(165, 180, 252, 0.18), transparent 36%), linear-gradient(180deg, #f0f1ff 0%, #faf5ff 100%);
+  border-color: rgba(165, 180, 252, 0.3);
+}.rep-redesign-scope .rep-sale-card {
+  border-radius: 16px;
+  border-color: rgba(196, 181, 253, 0.3);
+  background: linear-gradient(180deg, #fff 0%, #faf5ff 100%);
+  transition: all 200ms ease;
+}.rep-redesign-scope .rep-sale-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(139, 92, 246, 0.08);
+}.rep-redesign-scope /* ---------- RETURNS — Rose ---------- */
+.return-draft-summary {
+  border-radius: 16px;
+}.rep-redesign-scope .return-draft-summary article {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(6px);
+  border: 1.5px solid rgba(251, 113, 133, 0.2);
+  border-radius: 14px;
+}.rep-redesign-scope .return-draft-summary-amount {
+  border-color: rgba(239, 68, 68, 0.25) !important;
+  background: linear-gradient(180deg, #fff5f5 0%, #fee2e2 100%) !important;
+}.rep-redesign-scope .return-line-card {
+  border-radius: 16px;
+  border-color: rgba(251, 113, 133, 0.25);
+  background: linear-gradient(180deg, #fff 0%, #fff5f5 100%);
+}.rep-redesign-scope /* ---------- STOCK — Amber ---------- */
+.rep-stock-panel {
+  background: radial-gradient(circle at top right, rgba(251, 191, 36, 0.15), transparent 36%), linear-gradient(180deg, #fffbeb 0%, #fefce8 100%);
+  border-color: rgba(253, 186, 116, 0.3);
+}.rep-redesign-scope .rep-stock-metrics article {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(6px);
+  border: 1.5px solid rgba(253, 186, 116, 0.3);
+  border-radius: 16px;
+}.rep-redesign-scope .rep-stock-metrics article.danger {
+  border-color: rgba(239, 68, 68, 0.25);
+  background: linear-gradient(180deg, #fff5f5 0%, #fee2e2 100%);
+}.rep-redesign-scope .rep-stock-table {
+  border-radius: 16px;
+  overflow: hidden;
+}.rep-redesign-scope .rep-stock-table header {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+}.rep-redesign-scope .rep-stock-table header button {
+  color: #92400e;
+  font-weight: 800;
+}.rep-redesign-scope /* ---------- CUSTOMERS — Teal/Green ---------- */
+.rep-customers-panel {
+  background: radial-gradient(circle at top right, rgba(110, 231, 183, 0.18), transparent 36%), linear-gradient(180deg, #ecfdf5 0%, #f0fdf4 100%);
+  border-color: rgba(110, 231, 183, 0.3);
+}.rep-redesign-scope .rep-customers-head h2 {
+  color: #065f46;
+}.rep-redesign-scope .rep-customers-head p {
+  color: #059669;
+}.rep-redesign-scope .rep-customer-card {
+  border-radius: 16px;
+  border-color: rgba(110, 231, 183, 0.3);
+  background: linear-gradient(180deg, #fff 0%, #ecfdf5 100%);
+  transition: all 200ms ease;
+}.rep-redesign-scope .rep-customer-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.08);
+}.rep-redesign-scope .rep-customer-side-label {
+  color: #047857;
+}.rep-redesign-scope .outstanding-text {
+  color: #dc2626 !important;
+  font-weight: 800;
+}.rep-redesign-scope /* ---------- SEARCH INPUTS ---------- */
+.imperfect-search-input, .rep-redesign-scope .rep-step-input, .rep-redesign-scope .rep-customers-search {
+  border: 1.5px solid rgba(203, 213, 225, 0.5) !important;
+  border-radius: 14px !important;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238b5cf6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E") no-repeat 0.95rem center / 16px 16px, linear-gradient(180deg, #fff 0%, #faf8ff 100%) !important;
+  box-shadow: 0 4px 10px rgba(99, 102, 241, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.92) !important;
+}.rep-redesign-scope .imperfect-search-input:focus, .rep-redesign-scope .rep-step-input:focus, .rep-redesign-scope .rep-customers-search:focus {
+  border-color: rgba(99, 102, 241, 0.35) !important;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.08), 0 6px 14px rgba(99, 102, 241, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+}.rep-redesign-scope /* ---------- NOTICE ---------- */
+.notice {
+  background: linear-gradient(135deg, #eff6ff 0%, #e0e7ff 100%);
+  color: #3730a3;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 14px;
+  padding: 0.72rem 0.9rem;
+  font-weight: 700;
+}.rep-redesign-scope /* ---------- PANELS ---------- */
+.panel {
+  border-radius: 20px;
+  border: 1px solid rgba(226, 232, 240, 0.6);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}.rep-redesign-scope .panel h2 {
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}.rep-redesign-scope /* ---------- QTY BOX ---------- */
+.qty-box {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1.5px solid rgba(203, 213, 225, 0.4);
+  border-radius: 14px;
+  padding: 0.25rem;
+}.rep-redesign-scope .qty-box button {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+  color: #334155;
+  border: 1px solid rgba(203, 213, 225, 0.5);
+  transition: all 150ms ease;
+}.rep-redesign-scope .qty-box button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #e2e8f0 0%, #cbd5e1 100%);
+}.rep-redesign-scope .qty-box span {
+  min-width: 36px;
+  text-align: center;
+  font-weight: 900;
+  font-size: 1.1rem;
+  color: #1e293b;
+}.rep-redesign-scope /* ---------- FULLSCREEN SHEETS ---------- */
+.rep-fullscreen-sheet {
+  background: radial-gradient(circle at top right, rgba(196, 181, 253, 0.1), transparent 40%), linear-gradient(180deg, #fff 0%, #faf8ff 100%);
+}.rep-redesign-scope .rep-step-list-row {
+  border-radius: 16px;
+  border: 1.5px solid rgba(147, 197, 253, 0.3);
+  background: linear-gradient(180deg, #fff 0%, #f0f7ff 100%);
+  transition: all 180ms ease;
+}.rep-redesign-scope .rep-step-list-row:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(59, 130, 246, 0.08);
+}.rep-redesign-scope /* ---------- CUSTOMER SUGGESTIONS ---------- */
+.customer-suggestions {
+  border-radius: 14px;
+  border: 1.5px solid rgba(203, 213, 225, 0.4);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}.rep-redesign-scope .customer-suggestions button {
+  border-radius: 0;
+  border: none;
+  background: #fff;
+  color: #1e293b;
+  font-weight: 600;
+  padding: 0.72rem 0.85rem;
+  transition: background 120ms ease;
+}.rep-redesign-scope .customer-suggestions button:hover {
+  background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+}.rep-redesign-scope /* ---------- FORM HINTS ---------- */
+.form-hint {
+  color: #64748b;
+  font-size: 0.84rem;
+  font-weight: 600;
+}.rep-redesign-scope /* ---------- MODALS ---------- */
+.low-stock-modal {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}.rep-redesign-scope .low-stock-modal-card {
+  border-radius: 24px;
+  border: 1px solid rgba(226, 232, 240, 0.5);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}.rep-redesign-scope .success-modal-card {
+  background: linear-gradient(180deg, #f0fdf4 0%, #dcfce7 100%);
+  border-color: rgba(34, 197, 94, 0.25);
+}.rep-redesign-scope .error-modal-card {
+  background: linear-gradient(180deg, #fef2f2 0%, #fee2e2 100%);
+  border-color: rgba(239, 68, 68, 0.25);
+}.rep-redesign-scope .rep-sale-edit-modal-card {
+  border-radius: 24px;
+  background: linear-gradient(180deg, #faf5ff 0%, #f5f3ff 100%);
+  border-color: rgba(196, 181, 253, 0.35);
+}.rep-redesign-scope /* ---------- MOBILE OVERRIDES ---------- */
+@media (max-width: 640px) {
+  .auth-card {
+    max-width: 100%;
+    border-radius: 28px;
+    padding: 1.8rem 1.4rem 1.4rem;
+  }
+
+  .auth-brand img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .auth-welcome {
+    font-size: 1.45rem;
+  }
+
+  .cashier-tabs {
+    padding: 0.25rem;
+    border-radius: 16px;
+    gap: 0.28rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    flex-wrap: nowrap;
+  }
+
+  .cashier-tabs button {
+    min-height: 38px;
+    padding: 0.38rem 0.42rem;
+    border-radius: 12px;
+    font-size: 0.72rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .cashier-tabs button .nav-emoji {
+    margin-right: 0.22rem;
+    font-size: 0.92rem;
+  }
+
+  .cashier-mobile-sidebar button .nav-emoji {
+    font-size: 1.15rem;
+  }
+
+  .rep-wizard-footer {
+    background: linear-gradient(135deg, #4338ca 0%, #6366f1 50%, #8b5cf6 100%);
+    border-top: none;
+    box-shadow: none;
+  }
+
+  .rep-wizard-footer-actions .ghost {
+    background: linear-gradient(180deg, #fff 0%, #eef2ff 100%) !important;
+    color: #312e81 !important;
+    border-color: rgba(99, 102, 241, 0.2) !important;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.08) !important;
+  }
+
+  .rep-wizard-footer-actions .ghost .rep-nav-action-icon {
+    background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%) !important;
+    color: #312e81 !important;
+  }
+
+  .rep-cart-fab {
+    border-radius: 18px;
+    background: linear-gradient(180deg, #4338ca 0%, #6366f1 100%);
+    border-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    box-shadow: 0 12px 24px rgba(67, 56, 202, 0.3);
+    animation: floatBubble 3.5s ease-in-out infinite;
+  }
+
+  .rep-cart-fab span {
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    color: #1e293b;
+    box-shadow: 0 4px 10px rgba(245, 158, 11, 0.35);
+  }
+
+  .cashier-mobile-nav-toggle.billing-focus-mode {
+    background: linear-gradient(135deg, #4338ca 0%, #6366f1 100%);
+    box-shadow: 0 8px 18px rgba(67, 56, 202, 0.3);
+  }
+
+  .cashier-mobile-nav-toggle.billing-focus-mode .menu-toggle-icon span {
+    background: #fff !important;
+  }
+
+  .cashier-mobile-sidebar.billing-focus-mode {
+    background: radial-gradient(circle at top right, rgba(196, 181, 253, 0.2), transparent 30%), linear-gradient(180deg, #faf8ff 0%, #f0f1ff 100%);
+  }
+
+  .cashier-mobile-sidebar.billing-focus-mode button {
+    background: linear-gradient(180deg, #fff 0%, #f5f3ff 100%);
+    border-color: rgba(196, 181, 253, 0.3);
+  }
+
+  .cashier-mobile-sidebar.billing-focus-mode button.active {
+    background: linear-gradient(135deg, #4338ca 0%, #6366f1 100%) !important;
+    border-color: #4338ca !important;
+    color: #fff !important;
+  }
+}
+
+@media (max-width: 380px) {.rep-redesign-scope .cashier-tabs button {
+    font-size: 0.66rem;
+    padding: 0.32rem 0.35rem;
+  }.rep-redesign-scope .cashier-tabs button .nav-emoji {
+    font-size: 0.82rem;
+    margin-right: 0.15rem;
+  }.rep-redesign-scope .rep-step-card {
+    padding: 0.72rem;
+  }
+}
