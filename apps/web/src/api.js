@@ -3,7 +3,9 @@ const fallbackHost =
     ? window.location.hostname
     : "localhost";
 
-const API_BASE = import.meta.env.VITE_API_BASE || `http://${fallbackHost}:4010`;
+const API_BASE = typeof import.meta.env.VITE_API_BASE === "string"
+  ? import.meta.env.VITE_API_BASE
+  : `http://${fallbackHost}:4010`;
 
 let accessToken = "";
 let refreshToken = "";
