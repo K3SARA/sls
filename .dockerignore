@@ -5,6 +5,5 @@ node_modules
 .gitignore
 npm-debug.log*
 apps/mobile
-apps/web
 dist
 coverage
