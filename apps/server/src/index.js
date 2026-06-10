@@ -1,6 +1,8 @@
 import "dotenv/config";
 import express from "express";
 import http from "node:http";
+import { fileURLToPath } from "node:url";
+import path from "node:path";
 import fs from "node:fs";
 import cors from "cors";
 import { Server } from "socket.io";
