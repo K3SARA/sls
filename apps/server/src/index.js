@@ -1873,7 +1873,7 @@ io.on("connection", (socket) => {
 // Serve web client static files if built
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const clientDistPath = path.join(__dirname, "../../../web/dist");
+const clientDistPath = path.join(__dirname, "../../web/dist");
 
 if (fs.existsSync(clientDistPath)) {
   app.use(express.static(clientDistPath));
